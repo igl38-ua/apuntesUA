@@ -1,0 +1,1731 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://igl38-ua.github.io/apuntesUA/REDES/TEMA%205/TEMA%205/">
+      
+      
+        <link rel="prev" href="../../TEMA%204/MVT/Suma%20de%20verificaci%C3%B3n%20%28Checksum%29/">
+      
+      
+        <link rel="next" href="../../TEMA%206/TEMA%206/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Tema 5. Nivel de red - Apuntes UA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/styles.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#protocolo-ip-rfc-791" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Apuntes UA" class="md-header__button md-logo" aria-label="Apuntes UA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes UA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 5. Nivel de red
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/igl38-ua/apuntesUA" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../ADA/ArbolADA/" class="md-tabs__link">
+        
+  
+    
+  
+  ADA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ArbolREDES/" class="md-tabs__link">
+          
+  
+  REDES
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Apuntes UA" class="md-nav__button md-logo" aria-label="Apuntes UA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Apuntes UA
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/igl38-ua/apuntesUA" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ADA/ArbolADA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ADA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    REDES
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            REDES
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ArbolREDES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arbol Redes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%201/TEMA%201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tema 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%202/TEMA%202/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tema 2. Arquitectura de red
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tema 3. Nivel físico
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 3. Nivel físico
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%203/%21TEMA%203/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tema 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%203/Modulaciones%20y%20usos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modulaciones y usos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%203/Multiplexi%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiplexión
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%203/Medios%20de%20transmisi%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Medios de transmisión
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%203/Resumen%20comparativo%20de%20las%20t%C3%A9cnicas%20de%20modulaci%C3%B3n%20y%20multiplexi%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resumen comparativo de las técnicas de modulación y multiplexión
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tema 4. Nivel de enlace
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tema 4. Nivel de enlace
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%204/%21TEMA%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tema 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%204/MVT/%21MVT/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mecanismos de verificación de tramas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%204/MVT/FCS%20%28Frame%20Check%20Sequence%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FCS (Frame Check Sequence)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%204/MVT/Paridad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paridad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%204/MVT/CRC%20%28Cyclic%20Redundancy%20Check%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CRC (Cyclic Redundancy Check)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%204/MVT/Suma%20de%20verificaci%C3%B3n%20%28Checksum%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Suma de verificación (Checksum)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tema 5. Nivel de red
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tema 5. Nivel de red
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-redes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de redes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encaminamiento-entre-sa-sistemas-autonomos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encaminamiento entre SA (Sistemas Autónomos):
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encaminamiento entre SA (Sistemas Autónomos):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bgpprotocolo-bgp" class="md-nav__link">
+    <span class="md-ellipsis">
+      [[BGP|Protocolo BGP]]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[[BGP|Protocolo BGP]]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mensajes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mensajes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusiones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encaminamiento-dentro-de-sa-sistemas-autonomos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encaminamiento dentro de SA (Sistemas autónomos):
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encaminamiento dentro de SA (Sistemas autónomos):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ripprotocolo-rip" class="md-nav__link">
+    <span class="md-ellipsis">
+      [[RIP|Protocolo RIP]]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[[RIP|Protocolo RIP]]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rip-v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RIP v1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rip-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      RIP v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusiones_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusiones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ospfprotocolo-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      [[OSPF|Protocolo OSPF]]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[[OSPF|Protocolo OSPF]]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mensajes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mensajes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%206/TEMA%206/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tema 6. Nivel de transporte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA%207/TEMA%207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tema 7. Acceso a servicios de internet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cabeceras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cabeceras protocolos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Protocolos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            Protocolos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Protocolos/RIP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Protocolos/OSPF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OSPF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Formulario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formulario
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Esquema%20de%20contenido/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Esquema de contenido
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-redes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de redes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encaminamiento-entre-sa-sistemas-autonomos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encaminamiento entre SA (Sistemas Autónomos):
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encaminamiento entre SA (Sistemas Autónomos):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bgpprotocolo-bgp" class="md-nav__link">
+    <span class="md-ellipsis">
+      [[BGP|Protocolo BGP]]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[[BGP|Protocolo BGP]]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mensajes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mensajes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusiones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encaminamiento-dentro-de-sa-sistemas-autonomos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encaminamiento dentro de SA (Sistemas autónomos):
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encaminamiento dentro de SA (Sistemas autónomos):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ripprotocolo-rip" class="md-nav__link">
+    <span class="md-ellipsis">
+      [[RIP|Protocolo RIP]]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[[RIP|Protocolo RIP]]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rip-v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RIP v1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rip-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      RIP v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusiones_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusiones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ospfprotocolo-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      [[OSPF|Protocolo OSPF]]
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[[OSPF|Protocolo OSPF]]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mensajes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mensajes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>Objetivos de la capa de red. Encaminamiento. </p>
+<h1 id="protocolo-ip-rfc-791">Protocolo IP. RFC 791</h1>
+<p>Direccionamiento IP 193.145.20.23
+- Máscara de red.
+- Valor de 32 bits.
+- X.X.X.0 - Dirección de red.
+- X.X.X.255 - Dirección de broadcast.</p>
+<h2 id="tipos-de-redes">Tipos de redes</h2>
+<table>
+<thead>
+<tr>
+<th>Clase</th>
+<th>Tipo</th>
+<th>Bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0...</td>
+<td>Red (7) / Máquina (24)</td>
+</tr>
+<tr>
+<td>B</td>
+<td>10...</td>
+<td>Red (14) / Máquina (16)</td>
+</tr>
+<tr>
+<td>C</td>
+<td>110...</td>
+<td>Red  (21) / Máquina (8)</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1110...</td>
+<td>Multicast (28)</td>
+</tr>
+<tr>
+<td>E</td>
+<td>11110...</td>
+<td>Futuras ampliaciones (27)</td>
+</tr>
+<tr>
+<td>## Redes privadas</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 10.0.0.0/8</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 192.168.0.0/16</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 172.16.0.0/12</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td># Direccionamiento de redes con el protocolo IP</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>## Protocolo DHCP</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Protocolo de configuración de máquina dinámico (RFC 2131).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Parámetros de configuración de un servidor DHCP:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- Rango de direcciones IP disponibles.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- Valor de la máscara de red.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- Dirección IP de la puerta de enlace por defecto.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- Direcciones de los servidores DNS. Servidores que traducen el nombre de dominio de una máquina y su dirección IP.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### Mensajes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>DHCP DISCOVER</strong>: Cliente a MAC de difusión, informando a los servidores DHCP existentes de que necesita una IP.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>DHCP OFFER</strong>: Servidor al cliente, informando de una configuración disponible.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>DHCP REQUEST</strong>: Cliente a MAC de difusión, informando a los servidores DHCP la configuración IP que se solicita.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>DHCP ACK</strong>: Servidor a cliente, informando de que se le asigna y reserva por un tiempo la configuración IP. Cuando expira el tiempo de reserva (lease time) el cliente tiene que renovarlo con un paquete DHCP Request y recibir un DHCP ACK.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>DHCP RELEASE</strong>: Cliente a servidor, informando de que ya no necesita la configuración DHCP para que la libere.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td># Congestionamiento en redes IP</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>## Causas del congestionamiento</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>Routers con insuficiente capacidad de proceso</strong>. Se necesitará aumentar la capacidad de los encaminadores de la red si va a aumentar el flujo de paquetes.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>Fragmentación de la información con el protocolo IP</strong>. Si el protocolo IP fragmenta los paquetes a gran escala (MTU pequeño en la red), los routers necesitan más tiempo para el encaminamiento que con un MTU más grande, ya que tienen que analizar más cabeceras IP.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>## Detección del congestionamiento</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>Routers con insuficiente capacidad de proceso</strong>. Hay que monitorizar cuál es el porcentaje de uso de la CPU de los routers. Si es superior al 60-70% hay que utilizar un router de mayores prestaciones.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- <strong>Fragmentación de la información con el protocolo IP</strong>. Hay que verificar que los MTU de la red estén elegidos adecuadamente y que la fragmentación se evita con mecanismos como la norma RFC 1191. Detectando mensajes ICMP Source Quench o Fragment Reassembly Time Exceeded se conoce si la fragmentación está provocando efectos nocivos en la red.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>## Corrección del congestionamiento</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>La única solución es <strong>reducir el flujo de entrada de paquetes a la red</strong>.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Esta estrategia la utiliza el protocolo TCP, que permite el envío de un número máximo de paquetes sin esperar a los ACK. En caso de que los ACK no lleguen TPC es capaz de reducir su flujo de transmisión.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td># Sistemas Autónomos (SA)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>SISTEMA AUTÓNOMO</strong>: Conjunto de redes y routers controlados por una única autoridad administrativa (un único gestor de políticas de encaminamiento).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>POLÍTICA DE ENCAMINAMIENTO</strong>: Conjunto de estrategias o directrices para decidir los caminos óptimos a seguir en una red.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Encaminamiento a dos niveles: </p>
+<h2 id="encaminamiento-entre-sa-sistemas-autonomos">Encaminamiento entre SA (Sistemas Autónomos):</h2>
+<h3 id="bgpprotocolo-bgp">[[BGP|Protocolo BGP]]</h3>
+<p>BGP - Border Gateway Protocol.
+- La información de encaminamiento se intercambia utilizando conexiones TCP entre routers frontera.
+- <strong>BGP</strong> informa sobre la alcanzabilidad y conectividad entre SA (que redes pertenecen a que sistemas autónomos).
+- <strong>BGP</strong> reduce la información intercambiada comunicando una sola vez las redes accesibles a través de un SA y actualiza la información que se modifica. Agrupa destinos en una sola denominación.
+- <strong>BGP</strong> soporta autenticación para preservar la validez de la información del encaminamiento. </p>
+<h4 id="mensajes">Mensajes</h4>
+<ul>
+<li><strong>BGP Open</strong>: Primer mensaje entre dos routers frontera que establecen la conexión TCP. Intercambian parámetros como el identificador del SA, intervalos de tiempo de envío de mensajes...</li>
+<li><strong>BGP Update</strong>: Informa acerca de destinos existentes en el SA y destinos que se han eliminado del SA.</li>
+<li><strong>BGP Keepalive</strong>: Informa de que un extremo de la comunicación sigue activo ya que TCP no controla que los dos extremos estén activos cuando no intercambian datos.</li>
+<li><strong>BGP Notification</strong>: Informa sobre errores en la comunicación BGP (mensajes BGP con errores: rutas incorrectas o incongruentes) y permite el control en la comunicación.</li>
+</ul>
+<p>![[Temas Redes.pdf#page=214]]</p>
+<h4 id="conclusiones">Conclusiones</h4>
+<ul>
+<li>BGP solo informa de accesibilidad, no de rutas a seguir o de menor coste. </li>
+<li>BGP establece conexiones entre pares de routers frontera.</li>
+<li>BGP informa sobre destinos existentes y no existentes, evitando la presencia de mensajes ICMP Destination Unreachable entre diferentes ISPs (Internet Service Provider).</li>
+</ul>
+<p>En encaminamiento estático en la red no es adecuado, para ello se introduce un mecanismo de configuración y actualización de tablas de encaminamiento automático. </p>
+<h2 id="encaminamiento-dentro-de-sa-sistemas-autonomos">Encaminamiento dentro de SA (Sistemas autónomos):</h2>
+<h3 id="ripprotocolo-rip">[[RIP|Protocolo RIP]]</h3>
+<p>RIP - Routing Information Protocol. 
+Basado en un algoritmo de vector de distancia - <strong>Algoritmo Bellman-Ford</strong>.
+- Cada router tiene una tabla con información de destinos y una métrica para alcanzarlos.
+- Cada router propaga la información de sus rutas conocidas a través de mensajes en la red, y los routers que la reciben actualizan sus tablas si encuentran rutas más cortas a un mismo destino.</p>
+<ul>
+<li>Para cada entrada en la tabla de rutas hay un temporizador (180 segundos). Si la ruta no es informada de nuevo en ese tiempo se elimina.</li>
+<li>Existe un número máximo de saltos para la métrica RIP, <strong>16</strong>. Esto permite llegar a una solución estable. </li>
+</ul>
+<h4 id="rip-v1">RIP v1</h4>
+<p>Los mensajes RIP con información de las rutas de datos se envían dentro de paquetes [[UDP]].
+- El envío de mensajes RIP a la dirección de broadcast hace que las máquinas que no soportan RIP procesen paquetes hasta la capa de transporte (UDP). 
+Para solventar estos problemas se introduce la versión 2 de RIP.</p>
+<h4 id="rip-v2">RIP v2</h4>
+<p>Los mensajes RIP son enviados a la dirección IP <strong>224.0.0.9</strong> (dirección IP de [[Multicasting|multicast]]). 
+- RIP permite el encaminamiento dinámico en redes de tamaño pequeño (hasta 16 saltos) con una estructura sencilla (inexistencia de muchos bucles). 
+- RIP presenta problemas de convergencia lenta ante cambios en la red y posibilidad de que se introduzcan bucles infinitos. Para evitar esto emplea estrategias como temporizadores y un número máximo de saltos.</p>
+<h4 id="conclusiones_1">Conclusiones</h4>
+<p>RIP permite el encaminamiento dinámico en redes pequeñas. 
+RIP presenta problemas de convergencia lenta ante cambios en la red y posibilidad de que se introduzcan bucles infinitos. Para evitar esto se introducen temporizadores y número máximo de saltos. </p>
+<h3 id="ospfprotocolo-ospf">[[OSPF|Protocolo OSPF]]</h3>
+<p>OSPF - Open Shortest Path First.
+RIP sólo tiene en cuenta el número de saltos, pero no la velocidad de transferencia, por lo que las rutas con menos saltos no tienen porque ser las más rápidas.</p>
+<p>OSPF se fundamenta en el estado del enlace, asignando un coste dependiendo de las características del enlace (alta velocidad, baja velocidad, activado, desactivado, etc.). 
+OSPF utiliza el algoritmo de Dijkstra para determinar las rutas de menor coste en la red.
+El conjunto de routers de una red que emplean OSPF conforman un grafo, donde se determinan las rutas más cortas entre cualquier par de nodos (router, o en definitiva redes) del grafo (red).</p>
+<p>OSPF utiliza varias direcciones [[Multicasting|multicast]] para diferentes tipos de mensajes de enrutamiento. 
+Los mensajes OSPF se encapsulan en paquetes dirigidos a la dirección de <strong>multicast 224.0.0.5</strong> (todos los routers OSPF) y <strong>224.0.0.6</strong> (routers OSPF designados).</p>
+<h4 id="mensajes_1">Mensajes</h4>
+<ul>
+<li><strong>OSPF Hello</strong>: Permite determinar qué vecinos tiene accesible un router. </li>
+<li><strong>OSPF Database description</strong>: Informa de la topología de la red de comunicaciones.</li>
+<li><strong>OSPF Link status request</strong>: Permite solicitar a los routers vecinos información acerca de los enlace activos. </li>
+<li><strong>OSPF Link status update</strong>: Un router informa a sus vecinos del estado de sus enlaces.</li>
+</ul>
+<h1 id="multicasting">Multicasting</h1>
+<p>Las <strong>direcciones multicast</strong> son direcciones IP especiales que se utilizan para enviar datos desde un único emisor a múltiples receptores de forma simultánea. 
+Una dirección IP normal se utiliza en comunicaciones <strong>punto a punto</strong>, pero una multicast se utilizan para comunicaciones <strong>uno a muchos</strong>.</p>
+<table>
+<thead>
+<tr>
+<th><em>Dirección multicast</em></th>
+<th><em>Denominación del grupo</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>224.0.0.0</td>
+<td>Reservada</td>
+</tr>
+<tr>
+<td>224.0.0.1</td>
+<td>Todos los equipos de la subred</td>
+</tr>
+<tr>
+<td>224.0.0.2</td>
+<td>Todos los routers en la subred</td>
+</tr>
+<tr>
+<td>224.0.0.5</td>
+<td>Routers OSPF</td>
+</tr>
+<tr>
+<td>224.0.0.6</td>
+<td>Routers OSPF designados</td>
+</tr>
+<tr>
+<td>224.0.0.9</td>
+<td>Routers RIPv2</td>
+</tr>
+</tbody>
+</table>
+<p>Existe una restricción, y es que los paquetes dirigidos a grupos de gestión de encaminamiento (desde la dirección <strong>224.0.0.1</strong> a la <strong>224.0.0.255</strong>) no son propagados nunca (para evitar congestionamiento y problemas de convergencia de los algoritmos de encaminamiento).</p>
+<h1 id="ipv6-rfc-2460">IPv6 (RFC 2460)</h1>
+<ul>
+<li>IPv6 introduce direcciones IP de 128 frente a las de 32 del IPv4.</li>
+<li>IPv6 no permite la fragmentación de un paquete IP en un router intermedio, solo en el router origen, y es este el que determina el MTU mínimo en el camino de origen a destino. (valor mínimo para redes IPv6, 1280 bytes).</li>
+<li>Es más eficiente que IPv4.</li>
+</ul>
+<h2 id="cabecera-ipv6">Cabecera IPv6</h2>
+<p>Es de 40 bytes. 
+Tiene una parte fija, común a todos los paquetes, un conjunto de cabeceras de extensión y la PDU (Protocol Data Unit - Unidad de Datos de un Protocolo) del nivel superior.</p>
+<h3 id="cabeceras-de-extension">Cabeceras de extensión</h3>
+<ul>
+<li>Cabecera de opciones salto a salto. Define las acciones que debe tomar cada router que atraviesa el paquete.</li>
+<li>Cabecera de encaminamiento. Proporciona un encaminamiento adicional, similar al encaminamiento origen en IPv4.</li>
+<li>Cabecera de fragmentación. Fragmentación en el origen, el destinatario se encarga de reensamblar el paquete. </li>
+<li>Cabecera de opciones para el destino. Información a examinar por el nodo destino. </li>
+<li>Cabecera de autenticación y encapsulado de seguridad. Cabeceras AH, ESP de IPSEC (cifrado y autenticación de paquetes IP).</li>
+</ul>
+<p>El número permitido de saltos es igual que para IPv4.
+IPv6 permite tres tipos de dirección IP:</p>
+<h3 id="direcciones-de-unidifusion-unicast">Direcciones de unidifusión (unicast)</h3>
+<p>Identifican a una interfaz individual.</p>
+<h3 id="direcciones-de-multidifusion-multicast">Direcciones de multidifusión (multicast)</h3>
+<p>Identifican a un conjunto de interfaces que pertenecen a un grupo definido.</p>
+<h3 id="direcciones-de-monodifusion-anycast">Direcciones de monodifusión (anycast)</h3>
+<p>Identifican a un conjunto de interfaces que pertenecen a un grupo, pero el paquete solo se entrega a la interfaz más cercana.</p>
+<h2 id="notacion-ipv6">Notación IPv6</h2>
+<p>En las direcciones Ipv6 hay 8 grupos de 4 dígitos hexadecimales. Los grupos que contienen 0 se sustituyen por un doble : .</p>
+<p>Las direcciones MAC normales tienen un valor de 48 bits divididos en dos grupos de 24, de los cuales, los 24 primeros corresponden con el fabricante y el resto son los de la interfaz.
+En las MAC para IPv6 los primeros 24 bits corresponden con el proveedor o fabricante, luego se añaden 16 bits a valor fijo y luego los 24 de la interfaz. 
+Cualquier dispositivo conectado a una IPv6 tiene un valor <strong>dinámico</strong> pero <strong>único</strong> y <strong>reservado</strong> para su red. </p>
+<h1 id="transicion-ipv4-ipv6">Transición IPv4 - IPv6</h1>
+<ul>
+<li>Un dispositivo IPv4 solo puede tener conectividad con dispositivos IPv4.</li>
+<li>Cuando la conectividad es entre equipos con la misma versión (IPv4 o IPv6) y deben atravesar una red intermedia con una versión IP distinta, se recurre al procedimiento del túnel. </li>
+</ul>
+<h2 id="procedimiento-del-tunel">Procedimiento del túnel</h2>
+<p>Se encapsula un paquete IPv4 (IPv6) como dato dentro de un paquete IPv6 (IPv4) para su transporte a esa red intermedia. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/igl38-ua/apuntesUA" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
