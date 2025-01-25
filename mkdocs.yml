@@ -5,16 +5,52 @@ theme:
   name: material
   features:
     - navigation.tabs
-    - navigation.expand
 
-nav:
-  - Inicio: index.md
-  - ADA: ADA/ArbolADA.md
-  - REDES: REDES/ArbolREDES.md
+markdown_extensions:
+  - pymdownx.arithmatex
+  - pymdownx.superfences
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/igl38-ua/apuntesUA
   copyright: "© 2025 igl38-ua. Todos los derechos reservados."
+
+extra_css:
+  - assets/styles.css
+
+nav:
+  - Inicio: index.md
+  - ADA: ADA/ArbolADA.md
+  - REDES: 
+    - Arbol Redes: REDES/ArbolREDES.md
+    - Tema 1: REDES/TEMA 1/TEMA 1.md
+    - Tema 2. Arquitectura de red: REDES/TEMA 2/TEMA 2.md
+    - Tema 3. Nivel físico : 
+      - Tema 3: REDES/TEMA 3/!TEMA 3.md
+      - Modulaciones y usos: REDES/TEMA 3/Modulaciones y usos.md
+      - Multiplexión: REDES/TEMA 3/Multiplexión.md
+      - Medios de transmisión: REDES/TEMA 3/Medios de transmisión.md
+      - Resumen comparativo de las técnicas de modulación y multiplexión: REDES/TEMA 3/Resumen comparativo de las técnicas de modulación y multiplexión.md
+    - Tema 4. Nivel de enlace: 
+      - Tema 4: REDES/TEMA 4/!TEMA 4.md
+      - Mecanismos de verificación de tramas: REDES/TEMA 4/MVT/!MVT.md
+      - FCS (Frame Check Sequence): REDES/TEMA 4/MVT/FCS (Frame Check Sequence).md
+      - Paridad: REDES/TEMA 4/MVT/Paridad.md
+      - CRC (Cyclic Redundancy Check): REDES/TEMA 4/MVT/CRC (Cyclic Redundancy Check).md
+      - Suma de verificación (Checksum): REDES/TEMA 4/MVT/Suma de verificación (Checksum).md
+    - Tema 5. Nivel de red: REDES/TEMA 5/TEMA 5.md
+    - Tema 6. Nivel de transporte: REDES/TEMA 6/TEMA 6.md
+    - Tema 7. Acceso a servicios de internet: REDES/TEMA 7/TEMA 7.md
+    - Cabeceras protocolos: REDES/Cabeceras.md
+    - Protocolos:
+      - RIP: REDES/Protocolos/RIP.md
+      - OSPF: REDES/Protocolos/OSPF.md
+    - Formulario: REDES/Formulario.md
+    - Esquema de contenido: REDES/Esquema de contenido.md
+
 

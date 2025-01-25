@@ -1,0 +1,35 @@
+/* Cambiar el estilo de la negrita */
+strong {
+    font-weight: bold;
+    color: #ffffff; 
+}
+
+/* Estilo para los encabezados de nivel 1 */
+h1 {
+    color: #ffffff; 
+}
+
+/* Estilo para los encabezados de nivel 2 */
+h2 {
+    color: #5381d1;
+}
+
+/* Estilo para los encabezados de nivel 3 */
+h3 {
+    color: #a889f1; 
+}
+
+/* Estilo para los encabezados de nivel 4 */
+h4 {
+    color: #f5f387;
+}
+
+/* Estilo para los encabezados de nivel 5 */
+h5 {
+    color: #a937b8; 
+}
+
+/* Estilo para los encabezados de nivel 6 */
+h6 {
+    color: #db8b55; 
+}

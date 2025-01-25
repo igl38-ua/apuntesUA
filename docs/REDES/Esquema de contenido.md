@@ -1,0 +1,89 @@
+# Redes de computadores
+## Arquitectura de red 
+- Modelo de capas. Aplicación, Transporte, Red, Enlace, Físico.
+- Funciones de la capa de red
+- Interconexión de redes:
+## Nivel físico
+- Transmisión de señales de datos
+- Tipos de señales
+	- Analógicas
+	- Digitales
+- Ancho de banda del medio físico
+- Teorema de Nyquist
+- Distorsión en el medio
+	- Ruido. Teorema de Shannon
+- Tipos de ruido
+- Señalización en banda base
+- Señalización en banda modulada
+	- Modulación analógica. ASK, FSK, PSK, QPSK, QAM.
+	- Modulación digital. PCM, FDM, TDM.
+- Medios de transmisión
+	- Cable par paralelo
+	- Cable par trenzado
+	- Cable coaxial
+	- Fibra óptica
+		- Monomodo
+		- Multimodo de índice de salto
+		- Multimodo de índice gradual
+## Nivel de enlace
+- Direccionamiento
+- Control de errores
+	- FCS (Secuencias de verificación de tramas)
+	- Paridad
+	- CRC
+- Algoritmos de control de flujo
+	- Protocolos de parada y espera
+	- Protocolos de ventana deslizante
+- Redes LAN. Normas IEEE 802.x
+	- Arquitectura de red en LAN. LLC, MAC.
+- IEEE 802.3. Ethernet
+	- CSMA/CD. Reparto del medio
+	- Detección de colisiones
+	- Puentes
+	- Puentes transparentes. Algoritmo Spanning Tree
+	- Ethernet conmutada
+	- Fast Ethernet
+	- Gigabit Ethernet
+	- VLAN. IEEE 802.1Q
+- IEEE 802.11x Lan Inalámbrica
+	- CSMA/CA. Acceso al medio.
+	- Seguridad y autenticación en redes wifi
+	- Cifrado WEP
+	- Cifrado WPA
+	- Cifrado WPA2
+	- Cifrado WPA3
+## Nivel de red
+- Protocolo IP. RFC 791
+	- Direccionamiento
+	- DHCP
+	- Tablas de encaminamiento
+	- Congestionamiento en redes IP
+	- Estructura de Internet en Backbones
+- Algoritmos de gestión de tablas de encaminamiento
+	- Sistemas autónomos
+		- BGP. Mensajes
+		- RIPv1 y RIPv2
+		- OSPF. Mensajes
+- Multicasting
+	- IGMP
+- IPv6
+	- Cabecera IPv6
+	- Transición IPv4 - IPv6
+## Nivel de transporte
+- UDP
+	- Funcionalidades
+- TCP
+	- Gestión de la conexión
+	- Control de flujo de datos
+## Accesos a servicios de internet
+- Accesos WAN
+- Redes de agregación
+- Redes troncales
+- Accesos xDSL
+	- ADSL
+	- ADSL 2
+	- ADSL 2+
+	- VDSL
+- Accesos FTTx
+- Accesos HFC
+

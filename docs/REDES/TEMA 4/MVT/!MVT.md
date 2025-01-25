@@ -1,0 +1,18 @@
+Los mecanismos de verificación de trama son técnicas utilizadas en las redes de computadoras para detectar errores en los datos transmitidos. Estos mecanismos aseguran que los datos recibidos sean idénticos a los datos enviados, permitiendo la detección (y en algunos casos la corrección) de errores que pueden haber ocurrido durante la transmisión. Los errores pueden ser causados por diversas razones, como interferencias electromagnéticas, problemas físicos en el medio de transmisión, o colisiones en redes ocupadas. A continuación, se describen algunos de los mecanismos de verificación de trama más comunes, junto con ejemplos:
+### 1. Suma de verificación (Checksum)
+La suma de verificación es un método simple pero efectivo para detectar errores en los datos transmitidos. Consiste en sumar los valores de los bytes de datos en el emisor, a menudo utilizando aritmética de complemento a uno, y luego enviar el resultado junto con los datos. El receptor realiza la misma suma en los datos recibidos, incluyendo el valor de suma de verificación transmitido, y si el resultado es un valor específico (por ejemplo, 0xFF), los datos se consideran correctos. Si el resultado es diferente, se asume que los datos están corruptos.
+#### Ejemplo:
+- Transferencia de archivos: La suma de verificación se calcula para los datos de un archivo antes de enviarlo y se verifica en el destino para asegurar que el archivo no se ha dañado durante la transmisión.
+### 2. CRC (Cyclic Redundancy Check)
+El CRC es un método más robusto que la suma de verificación para detectar errores en los datos transmitidos. Utiliza polinomios y operaciones algebraicas para generar un valor de CRC de los datos antes de la transmisión. Este valor se envía junto con los datos. El receptor realiza el mismo cálculo en los datos recibidos, incluyendo el valor de CRC transmitido, y si el resultado es el valor esperado (por lo general 0), los datos se consideran sin errores.
+#### Ejemplo:
+- Comunicaciones de red: El CRC se utiliza en protocolos como Ethernet para asegurar la integridad de los datos transmitidos en cada trama.
+### 3. Paridad
+La verificación de paridad es una técnica simple que se puede utilizar para detectar errores en un solo bit. Consiste en añadir un bit adicional, el bit de paridad, a los datos antes de la transmisión. Este bit se establece de tal manera que el número total de bits establecidos a 1 en los datos, incluyendo el bit de paridad, sea par (paridad par) o impar (paridad impar). El receptor verifica si la paridad de los datos recibidos coincide con la esperada, lo que permite detectar errores en un solo bit.
+#### Ejemplo:
+- Comunicación serial: La verificación de paridad puede utilizarse en comunicaciones seriales RS-232 para detectar errores en la transmisión de cada byte.
+### 4. FCS (Frame Check Sequence)
+La FCS es un término general que se refiere al campo dentro de una trama de datos que contiene el resultado de un algoritmo de detección de errores, como el CRC. El propósito de la FCS es permitir al receptor verificar la integridad de la trama de datos recibida.
+#### Ejemplo:
+- Protocolos de red: En el protocolo de punto a punto (PPP), se utiliza una FCS, típicamente un CRC, para verificar la integridad de cada paquete transmitido.
+Estos mecanismos de verificación son fundamentales para asegurar la fiabilidad de las comunicaciones en redes de computadoras, permitiendo detectar (y en algunos casos corregir) errores que pueden afectar la integridad de los datos transmitidos.
