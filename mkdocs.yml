@@ -8,7 +8,7 @@ theme:
     - navigation.expand
 
 nav:
-  - Inicio: inicio/index.md
+  - Inicio: index.md
   - ADA: ADA/ArbolADA.md
   - REDES: REDES/ArbolREDES.md
 
