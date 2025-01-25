@@ -1,17 +1,8 @@
-# Welcome to MkDocs
+# Página principal
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Aquí muestro los apuntes de diferentes asignaturas en formato Markdown. Inicialmente estaban diseñados para los links y el formato de [Obsidian](https://www.obsidian.md). 
+Estos son los ficheros originales [redes](../descargas/redes.zip), [ada](../descargas/ada.zip).
 
-## Commands
+[ADA](../ADA/ArbolADA.md)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+[REDES](../REDES/ArbolREDES.md)
