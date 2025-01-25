@@ -18,5 +18,3 @@ extra:
       link: https://github.com/igl38-ua/apuntesUA
   copyright: "© 2025 igl38-ua. Todos los derechos reservados."
 
-extra_css:
-  - overrides/stylesheets/extra.css
