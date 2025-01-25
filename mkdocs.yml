@@ -1,0 +1,22 @@
+site_name: Apuntes UA
+site_url: https://igl38-ua.github.io/apuntesUA
+repo_url: "https://github.com/igl38-ua/apuntesUA"
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.expand
+
+nav:
+  - Inicio: inicio/index.md
+  - ADA: ADA/ArbolADA.md
+  - REDES: REDES/ArbolREDES.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/igl38-ua/test-mkdocs
+  copyright: "© 2025 Ivanguijarro. Todos los derechos reservados."
+
+extra_css:
+  - overrides/stylesheets/extra.css
