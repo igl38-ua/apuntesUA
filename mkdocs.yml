@@ -13,7 +13,6 @@ markdown_extensions:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
 
-
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -38,11 +37,16 @@ nav:
       - Resumen comparativo de las técnicas de modulación y multiplexión: REDES/TEMA 3/Resumen comparativo de las técnicas de modulación y multiplexión.md
     - Tema 4. Nivel de enlace: 
       - Tema 4: REDES/TEMA 4/!TEMA 4.md
-      - Mecanismos de verificación de tramas: REDES/TEMA 4/MVT/!MVT.md
-      - FCS (Frame Check Sequence): REDES/TEMA 4/MVT/FCS (Frame Check Sequence).md
-      - Paridad: REDES/TEMA 4/MVT/Paridad.md
-      - CRC (Cyclic Redundancy Check): REDES/TEMA 4/MVT/CRC (Cyclic Redundancy Check).md
-      - Suma de verificación (Checksum): REDES/TEMA 4/MVT/Suma de verificación (Checksum).md
+      - Mecanismos de verificación de tramas: 
+        - SVT: REDES/TEMA 4/MVT/!MVT.md
+        - FCS (Frame Check Sequence): REDES/TEMA 4/MVT/FCS (Frame Check Sequence).md
+        - Paridad: REDES/TEMA 4/MVT/Paridad.md
+        - CRC (Cyclic Redundancy Check): REDES/TEMA 4/MVT/CRC (Cyclic Redundancy Check).md
+        - Suma de verificación (Checksum): REDES/TEMA 4/MVT/Suma de verificación (Checksum).md
+      - Protocolos de parada y espera: REDES/TEMA 4/Protocolos de parada y espera.md
+      - Protocolos de ventana deslizante: REDES/TEMA 4/Protocolos de ventana deslizante.md
+      - Redes LAN 1 - Normas IEEE 802.X: REDES/TEMA 4/Redes LAN 1 - Normas IEEE 802.X.md
+      - Redes LAN 1.1 - IEEE 802.11x LAN Inalámbricas: REDES/TEMA 4/Redes LAN 1.1 - IEEE 802.11x LAN Inalámbricas.md
     - Tema 5. Nivel de red: REDES/TEMA 5/TEMA 5.md
     - Tema 6. Nivel de transporte: REDES/TEMA 6/TEMA 6.md
     - Tema 7. Acceso a servicios de internet: REDES/TEMA 7/TEMA 7.md

@@ -4,7 +4,7 @@ Tiempo necesario para enviar todos los bits de una trama desde el emisor al rece
 #### Tiempo de Propagación ($T_p$)
 Tiempo que se toma para que un bit viaje desde el emisor al receptor a través del medio de comunicación. 
 #### Relación tiempo de transmisión y tiempo de propagación
-$$a=\frac{T_p}{T_t}$$
+$$ a=\frac{T_p}{T_t} $$
 Si a > 1 el $T_p$ > $T_t$, lo que significa que algunos bits alcanzan al receptor antes de que el emisor termine de transmitir toda la trama. 
 Si a < 1 el $T_p$ < $T_t$, lo que significa que el emisor y el receptor están más sincronizados reduciendo el tiempo de espera y aumentando la eficiencia del canal. 
 #### Protocolo unilateral de parada y espera. Canal sin errores

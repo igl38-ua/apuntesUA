@@ -1,4 +1,5 @@
 Redes LAN (Local Area Network). Interconexión de equipos en un segmento físico compartido y reducido. 
+
 Velocidades de 10 Mbps - 10Gbps.
 Comunicación con cables eléctricos, fibra ópticos y comunicación inalámbrica. 
 Las topologías en LAN comunes:
@@ -18,12 +19,14 @@ Los dispositivos están conectados en un anillo cerrado. Los datos viajan en una
 Colisiones raras por los tiempos de acceso por dispositivo. 
 ## Arquitectura de red en LAN
 Se incorpora el modelo del IEEE en el modelo TCP/IP.
+
 - **LLC**: Control del Enlace Lógico. Funcionalidad de control de flujo y errores.
 - **MAC**: Control de Acceso al Medio. Reparto del medio físico, direccionamiento físico, etc.
 ## Arquitectura IEEE 802
 ### IEEE 802.2 (LLC)
 Protocolo de Control de Enlace Lógico (LLC).
-![[Temas Redes.pdf#page=132]]
+
+![item](../../img/LLC.png)
 
 #### Integración TCP/IP con IEEE 802
 ![[Temas Redes.pdf#page=130]]
