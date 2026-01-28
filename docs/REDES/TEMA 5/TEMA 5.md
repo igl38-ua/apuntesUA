@@ -47,7 +47,7 @@ Esta estrategia la utiliza el protocolo TCP, que permite el envío de un número
 
 Encaminamiento a dos niveles: 
 ## Encaminamiento entre SA (Sistemas Autónomos):
-### [[BGP|Protocolo BGP]]
+### [Protocolo BGP](../Protocolos/BGP.md)
 BGP - Border Gateway Protocol.
 - La información de encaminamiento se intercambia utilizando conexiones TCP entre routers frontera.
 - **BGP** informa sobre la alcanzabilidad y conectividad entre SA (que redes pertenecen a que sistemas autónomos).
@@ -59,7 +59,6 @@ BGP - Border Gateway Protocol.
 - **BGP Keepalive**: Informa de que un extremo de la comunicación sigue activo ya que TCP no controla que los dos extremos estén activos cuando no intercambian datos.
 - **BGP Notification**: Informa sobre errores en la comunicación BGP (mensajes BGP con errores: rutas incorrectas o incongruentes) y permite el control en la comunicación.
 
-![item](../../Temas%20Redes.pdf#page=214)
 #### Conclusiones
 - BGP solo informa de accesibilidad, no de rutas a seguir o de menor coste. 
 - BGP establece conexiones entre pares de routers frontera.
@@ -67,7 +66,7 @@ BGP - Border Gateway Protocol.
 
 En encaminamiento estático en la red no es adecuado, para ello se introduce un mecanismo de configuración y actualización de tablas de encaminamiento automático. 
 ## Encaminamiento dentro de SA (Sistemas autónomos):
-### [[RIP|Protocolo RIP]]
+### [Protocolo RIP](../Protocolos/RIP.md)
 RIP - Routing Information Protocol. 
 Basado en un algoritmo de vector de distancia - **Algoritmo Bellman-Ford**.
 - Cada router tiene una tabla con información de destinos y una métrica para alcanzarlos.
@@ -76,17 +75,17 @@ Basado en un algoritmo de vector de distancia - **Algoritmo Bellman-Ford**.
 - Para cada entrada en la tabla de rutas hay un temporizador (180 segundos). Si la ruta no es informada de nuevo en ese tiempo se elimina.
 - Existe un número máximo de saltos para la métrica RIP, **16**. Esto permite llegar a una solución estable. 
 #### RIP v1
-Los mensajes RIP con información de las rutas de datos se envían dentro de paquetes [[UDP]].
+Los mensajes RIP con información de las rutas de datos se envían dentro de paquetes UDP.
 - El envío de mensajes RIP a la dirección de broadcast hace que las máquinas que no soportan RIP procesen paquetes hasta la capa de transporte (UDP). 
 Para solventar estos problemas se introduce la versión 2 de RIP.
 #### RIP v2
-Los mensajes RIP son enviados a la dirección IP **224.0.0.9** (dirección IP de [[Multicasting|multicast]]). 
+Los mensajes RIP son enviados a la dirección IP **224.0.0.9** (dirección IP de multicast). 
 - RIP permite el encaminamiento dinámico en redes de tamaño pequeño (hasta 16 saltos) con una estructura sencilla (inexistencia de muchos bucles). 
 - RIP presenta problemas de convergencia lenta ante cambios en la red y posibilidad de que se introduzcan bucles infinitos. Para evitar esto emplea estrategias como temporizadores y un número máximo de saltos.
 #### Conclusiones 
 RIP permite el encaminamiento dinámico en redes pequeñas. 
 RIP presenta problemas de convergencia lenta ante cambios en la red y posibilidad de que se introduzcan bucles infinitos. Para evitar esto se introducen temporizadores y número máximo de saltos. 
-### [[OSPF|Protocolo OSPF]]
+### [Protocolo OSPF](../Protocolos/OSPF.md)
 OSPF - Open Shortest Path First.
 RIP sólo tiene en cuenta el número de saltos, pero no la velocidad de transferencia, por lo que las rutas con menos saltos no tienen porque ser las más rápidas.
 
@@ -94,7 +93,7 @@ OSPF se fundamenta en el estado del enlace, asignando un coste dependiendo de la
 OSPF utiliza el algoritmo de Dijkstra para determinar las rutas de menor coste en la red.
 El conjunto de routers de una red que emplean OSPF conforman un grafo, donde se determinan las rutas más cortas entre cualquier par de nodos (router, o en definitiva redes) del grafo (red).
 
-OSPF utiliza varias direcciones [[Multicasting|multicast]] para diferentes tipos de mensajes de enrutamiento. 
+OSPF utiliza varias direcciones multicast para diferentes tipos de mensajes de enrutamiento. 
 Los mensajes OSPF se encapsulan en paquetes dirigidos a la dirección de **multicast 224.0.0.5** (todos los routers OSPF) y **224.0.0.6** (routers OSPF designados).
 #### Mensajes
 - **OSPF Hello**: Permite determinar qué vecinos tiene accesible un router. 

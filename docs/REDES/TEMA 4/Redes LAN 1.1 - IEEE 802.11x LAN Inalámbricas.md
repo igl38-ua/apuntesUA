@@ -2,7 +2,7 @@
 ## Infrastructure BSS
 Red inalámbrica con puntos de acceso.
 ## Independent BSS (IBSS)
-[[#Red inalámbrica ad-hoc]].
+[Red inalámbrica ad-hoc](#red-inalambrica-ad-hoc).
 # Red inalámbrica ad-hoc
 ### SSID
 **Service Set Identifier**. Identificador de BSS.

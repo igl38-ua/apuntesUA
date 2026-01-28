@@ -29,7 +29,7 @@ Protocolo de Control de Enlace Lógico (LLC).
 ![item](../../img/LLC.png)
 
 #### Integración TCP/IP con IEEE 802
-![item](../../Temas%20Redes.pdf#page=130)
+![item](../../img/ieee-802.png)
 ### IEEE 802.3 
 Ethernet CSMA/CD.
 Se caracteriza por el uso de un **medio físico compartido** entre todas las estaciones con topología de bus. 
@@ -46,10 +46,9 @@ Emplea cable coaxial grueso, permitiendo una velocidad de 10 Mbps a distancias d
 10Base2 y 10Base5 desaparecieron con la introducción del cable STP.
 MTU máximo es de 1492 bytes.
 
-![item](../../Temas%20Redes.pdf#page=135)
 #### Ethernet II (Ethernet DIX)
 No utiliza la capa LLC, permite introducir el datagrama IP en el paquete de nivel MAC.
-![item](../../Temas%20Redes.pdf#page=136)
+![item](../../img/ethernet-2.png)
 #### CSMA/CD
 Acceso al medio con detección de portadora y de colisión. Tanto Ethernet 802.3 y Ethernet DIX utilizan el mismo mecanismo para compartir el bus común: CSMA/CD.
 CSMA/CD comprueba el medio físico antes de transmitir un paquete de datos. Su esquema de funcionamiento es **semidúplex**.
@@ -118,4 +117,4 @@ Los **puertos troncales** (trunk ports) pertenecen a varias VLAN y a través de 
 #### Enlaces troncales
 Los conmutadores VLAN utilizan el protocolo **GVRP** (GARP VLAN Registration Protocol) para propagar la información entre conmutadores y conocer las VLANs asociadas a los puertos troncales. 
 ### IEEE 802.11x 
-[[Redes LAN 1.1 - IEEE 802.11x LAN Inalámbricas]]
+[Redes LAN 1.1 - IEEE 802.11x LAN Inalámbricas](Redes%20LAN%201.1%20-%20IEEE%20802.11x%20LAN%20Inalámbricas.md)

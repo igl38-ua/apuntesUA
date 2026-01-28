@@ -157,7 +157,7 @@ int max(const vector<int> &v) {
 
 **No hay mejor y peor caso**. Para que lo hubiera tendría que depender del contenido del vector no del tamaño del vector. No modifica los elementos del vector, luego la ejecución del bucle for siempre se realiza n veces, siendo n el tamaño del vector.
 
-En el caso de [Búsqueda de un elemento en un vector](#Búsqueda%20de%20un%20elemento%20en%20un%20vector) si que hay mejor y peor porque una vez se encuentra el elemento detiene la ejecución. Pero en este caso el bucle siempre se ejecuta n veces.
+En el caso de [Búsqueda de un elemento en un vector](#busqueda-de-un-elemento-en-un-vector) si que hay mejor y peor porque una vez se encuentra el elemento detiene la ejecución. Pero en este caso el bucle siempre se ejecuta n veces.
 
 **Complejidad**: lineal $O(n)$
 
