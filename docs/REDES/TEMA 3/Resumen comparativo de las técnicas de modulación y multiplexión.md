@@ -24,7 +24,7 @@ ___
 - **Coste**:
     - Moderado; menos costoso que WDM, pero más complejo que FDM.
 
----
+___
 ## Técnicas de Modulación
 ### 1. Amplitude Shift Keying (ASK):
 - **Rendimiento**:

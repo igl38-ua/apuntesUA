@@ -47,6 +47,7 @@ $$T(n) \in
 
 - **Peor caso**: subproblemas (0, n-1) o (n-1, 0).
 	Cuando el pivote se queda a uno de los lados.
+
 $$T(n) \in
 	\left\{
 		\begin{array}{lr}
@@ -54,6 +55,7 @@ $$T(n) \in
 			O(n)+T(n-1) & n>1
 		\end{array}
 	\right.$$
+
 ___
 ## Mejor caso
 
@@ -65,7 +67,7 @@ $$\frac{n}{2^k}=1 \rightarrow 2^k=n \rightarrow log_2(2^k)=log_{\large 2}\, n \r
 
 ![item](../Media/quicksort%201.png)
 
----
+___
 # Quickselect
 
 La principal diferencia respecto al quickSort es que en lugar de hacer dos llamadas recursivas se evalúa si elemento enésimo es menor que el pivote y se hace una única llamada por el lado correspondiente del vector.
@@ -103,21 +105,21 @@ Tamaño del problema: n = last - first
 
 - cuando $nth\neq p$ 
 - el pivote se queda al principio o al final
-$$T(n) =
+$T(n) =
 	\left\{
 		\begin{array}{lr}
 			1 & n\le1 &\\
 			n+T(n-1) & n>1
 		\end{array}
-	\right. \in O(n^2)$$
+	\right. \in O(n^2)$
 ## Otro caso especial
 
 - cuando $nth\neq p$
 - el pivote se queda en el centro
-$$T(n) =
+$T(n) =
 	\left\{
 		\begin{array}{lr}
 			1 & n\le1 &\\
 			n+T(\frac{n}{2}) & n>1
 		\end{array}
-	\right. \in O(n)$$
+	\right. \in O(n)$

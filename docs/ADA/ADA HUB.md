@@ -25,7 +25,7 @@ En back tracking se exploran todas las soluciones posible de manera sistemática
 ### Definición
 Se utiliza para resolver problemas de optimización. Este método consiste en dividir el problema original en subproblemas más pequeños (**ramificación**) y utilizar límites (**cotas**) para eliminar (**podar**) subproblemas que no pueden contener una solución mejor que la mejor solución encontrada hasta el momento.
 
----
+___
 # [Complejidad y notación asintótica](Complejidad%20y%20notación%20asintótica.md)
 # [Cálculo de complejidades básicas](Cálculo%20de%20complejidades%20básicas.md)
 # [Ecuaciones de recurrencia](Ecuaciones%20de%20recurrencia.md)

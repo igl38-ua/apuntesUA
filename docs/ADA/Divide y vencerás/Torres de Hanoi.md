@@ -16,6 +16,7 @@ Para la primera parte de la resolución (verde) se trata de una progresión geom
 $$\sum_{i=0}^{n} 2^i=2^{n+1}-1$$
 
 Luego la ecuación de recurrencia y la complejidad:  
+
 $$T(n)=
 	\left\{
 		\begin{array}{lr}

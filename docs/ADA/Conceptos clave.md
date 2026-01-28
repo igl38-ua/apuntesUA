@@ -39,4 +39,3 @@ El principio de optimalidad también se aplica en algunos casos de algoritmos vo
    - **Programación Dinámica**: Problema de la mochila, caminos mínimos, cadenas de matrices.
    - **Algoritmos Voraces**: Problema del cambio de monedas, problemas de intervalos.
 
----

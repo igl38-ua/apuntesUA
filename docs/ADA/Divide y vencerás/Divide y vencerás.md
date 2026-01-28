@@ -30,6 +30,7 @@ $$T(n)=h\,T(\frac{n}{b})+g(n)$$
 Solución general:
 
 - Suponiendo $g(n)\in O(n^k)$
+
 $$T(n) \in
 	\left\{
 		\begin{array}{lr}
@@ -38,6 +39,7 @@ $$T(n) \in
 			\Theta(n^{\Large log_{\Large b}h}) & si\,\, h>b^k
 		\end{array}
 	\right.$$
+	
 ### Teorema de reducción
 
 Los mejores resultados en cuanto al coste se consiguen cuando los subproblemas son aprox del mismo tamaño. 

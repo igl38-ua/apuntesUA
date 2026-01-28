@@ -39,6 +39,7 @@ $$knapsack(0, W)=0$$
 ### Recursividad
 
 n elementos.
+
 $$knapsack(n,W)= max
 	\left\{
 		\begin{array}{lr}
@@ -46,6 +47,7 @@ $$knapsack(n,W)= max
 			kanpsack(n-1,W-w_n)+v_n &if W\ge w_n
 		\end{array}
 	\right.$$
+
 Dos posibilidades, omitiendo el último elemento, o cogiéndolo. 
 Al cogerlo se elimina su peso del peso total y se suma el valor del último elemento siempre que sea menor que el peso total.
 
@@ -70,7 +72,8 @@ double knapsack(const vector<double> &v, const vector<unsigned> &w, int n, unsig
 #### Mejor y peor caso
 
 - **Mejor caso**: Ningún objeto cabe en la mochila, luego $T(n) \in \Omega(n)$
-- **Peor caso**: 
+- **Peor caso**:
+
 $$T(n) =
 	\left\{
 		\begin{array}{lr}
@@ -78,6 +81,7 @@ $$T(n) =
 			1+2\,T(n-1) & otro\,caso
 		\end{array}
 	\right.$$
+
 Término general
 
 $$T(n)=2^k-1+2^k\,T(n-k)$$
@@ -102,7 +106,7 @@ Si ha sido resuelta se utiliza ese valor guardado. En caso contrario se resuelve
 La complejidad por lo tanto será de n * n, que son los accesos a la matriz. $O(nW)$
 Matriz n * W.
 
----
+___
 ## Solución iterativa
 ### Una solución
 
@@ -137,7 +141,7 @@ Almacena en una matriz de booleanos si las posiciones han sido utilizadas o no y
 
 ![item](../Media/sol-iterativa-extraccion.png)
 
----
+___
 # Subestructura óptima o Principio de Optimalidad
 
 ![item](../Media/principio-de-optimalidad.png)

@@ -39,6 +39,7 @@ void mergesort(vector<int> &v, size_t first, size_t last){ // past-the-end
 
 El tamaño del problema viene dado por $n=last-first$
 Ecuación de recurrencia (coste exacto):
+
 $$T(n) =
 	\left\{
 		\begin{array}{lr}
@@ -46,7 +47,9 @@ $$T(n) =
 			n+2T(\frac{n}{2}) & n>1
 		\end{array}
 	\right.$$
+
 Complejidad temporal: $O(n\log n)$ (como en el quickSort).
+
 $$T(n) \in
 	\left\{
 		\begin{array}{lr}
@@ -54,6 +57,7 @@ $$T(n) \in
 			n+M(\frac{n}{2}) & n>1
 		\end{array}
 	\right.$$
+	
 Complejidad espacial: $O(n)$
 
 - Como hay una llamada al merge la complejidad espacial no es constante.

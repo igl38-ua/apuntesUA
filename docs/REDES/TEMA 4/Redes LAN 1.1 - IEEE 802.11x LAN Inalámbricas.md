@@ -38,7 +38,7 @@ Precisa de la existencia de un **AP**.
 Para que un equipo conozca la existencia de una red inalámbrica el AP envía un paquete denominado trama de baliza o señalización **(beacon frame)** indicando el valor SSID de la red inalámbrica.  
 No existen colisiones. 
 
----
+___
 # Seguridad en redes Wi-Fi
 Métodos de autenticación y cifrado.
 ### WEP

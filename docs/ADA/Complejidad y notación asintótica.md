@@ -31,6 +31,7 @@ ___
 5. **Llamadas a funciones**: Incluidas las llamadas a funciones y el retorno desde ellas, aunque la complejidad de la función llamada se analiza por separado.
 
 >Las instrucciones de declaración no se tienen en cuenta a menos que se trate de inicialización de variables en bucles porque puede afectar si modifica el tamaño del problema.
+
 >Las instrucciones de return se tienen en cuenta si forman parte de la lógica del algoritmo que afecta a como se ejecuta el código en relación con el tamaño de entrada. Como por ejemplo en algoritmos recursivos. 
 
 ___
@@ -93,6 +94,7 @@ int sumar(const vector<int> &v){
 | 3, 4  | n     | $Θ(n)$       |
 | 5     | 1     | $Θ(1)$       |
 | **Suma**      | n+2      | $Θ(n)$             |
+
 Ejemplo 1: Elemento máximo de un vector -> $Θ(n)$
 Ejemplo 2: Búsqueda en un vector ordenado -> $Θ(log_2\,n)$
 
@@ -103,6 +105,7 @@ Para expresar la complejidad de un algoritmo recursivo se utilizan las relacione
 ### Relación de recurrencia
 
 Expresión que relación el valor de una función con uno o más valores de la misma para valores < n.
+
 $$T(n)= 
 	\left\{
 		\begin{array}{lr}
@@ -142,7 +145,7 @@ ___
 
 Montículos y algoritmo de ordenación
 
----
+___
 # Programación dinámica
 
 Evita las repeticiones en las iteraciones de las llamadas recursivas en técnicas como divide y vencerás, guardando los resultados de los subproblemas que se evalúan (memoization). Esto puede provocar el aumento de la complejidad espacial, por eso es necesario evaluar la mejor situación. 

@@ -17,7 +17,7 @@ for( int i = 1; i < n; i*=2 )
 
 Se trata de una complejidad $O(n)$ porque se ejecuta de manera que el bucle interior se realiza n veces.
 
----
+___
 # Algoritmos Iterativos
 ## Traspuesta de una matriz
 
@@ -53,7 +53,7 @@ $$T_s(s)=T_d(d)=O(d^2)=O(s)$$
 
 **Complejidad:** lineal $O(s)$
 
----
+___
 ## Producto de dos matrices
 
 - Matrices d x d:
@@ -99,7 +99,7 @@ $$T_s(s)=T_d(d)=O(d^3)=O((\sqrt{\frac{s}{2}})^{\large 3})=O(s^{\frac{\Large 3}{\
 > Complejidad espacial -> para realizar su labor cuanta memoria necesitaría
 > Complejidad temporal -> evalúa el coste temporal 
 
----
+___
 ## Búsqueda de un elemento en un vector
 
 > NOT_FOUND -> valor centinela (valor imposible)
@@ -143,7 +143,7 @@ Total: 3n + 2
 
 **Complejidad**: lineal $O(n)$
 
----
+___
 ## Elemento máximo de un vector
 
 ```c++
@@ -161,7 +161,7 @@ En el caso de [Búsqueda de un elemento en un vector](#busqueda-de-un-elemento-e
 
 **Complejidad**: lineal $O(n)$
 
----
+___
 ## Ordenación por selección directa
 
 ```c++
@@ -184,7 +184,7 @@ Sumatorio para el for interior: $(n-1)+(n-2)+···+1$, se podría sustituir por
 
 **Complejidad**: $O(n^2)$ -> $O(\frac{\large n^2}{\large 2})$, que es del orden $O(n^2)$
 
----
+___
 ## Búsqueda binaria en un vector ordenado
 
 ```c++
@@ -217,12 +217,12 @@ No hay salidas adelantadas en el bucle while, se evalúa siempre independienteme
 
 **Complejidad**:  $O(log\,n)$
 
----
+___
 ## Ordenación por inserción 
 
 **Complejidad**: $O(n^2)$ 
 
----
+___
 # Algoritmos recursivos
 ## Búsqueda binaria en un vector ordenado
 
@@ -254,6 +254,7 @@ Tamaño del problema -> parte del vector que se utiliza (**count**).
 **Hay mejor y peor caso**. 
 
 Coste de las llamadas recursivas:
+
 $$T(n) \in
 	\left\{
 		\begin{array}{lr}
@@ -266,7 +267,7 @@ $$T(n) \in O(log\, n)$$
 
 El tamaño del problema se reduce al reducirse el count a la mitad con cada paso de programa.
 
----
+___
 ## Ordenación por selección
 ```c++
 void sort( vector<int> tv, size_t first) {
@@ -294,6 +295,7 @@ $$T(n) \in
 			O(n)+T(n-1) & n>0
 		\end{array}
 	\right.$$
+
 Recurrencia por sustitución
 
 $$\sum_{j=1}^{n}=\frac{n(n+1)}{2}+1$$

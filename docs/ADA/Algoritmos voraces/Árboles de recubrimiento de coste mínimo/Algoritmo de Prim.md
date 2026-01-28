@@ -129,7 +129,7 @@ $(O(n) + O(n))·(n-1)$ = $O(n^2)$
 
 La complejidad es $O(n^2)$ porque las llamadas a update_index y min_edge son sucesivas, no están anidadas como en el anterior supuesto.
 
----
+___
 # Comparativa con Kruskal 
 
 [Comparativa con Prim](Algoritmo%20de%20Kruskal.md#comparativa-con-prim)

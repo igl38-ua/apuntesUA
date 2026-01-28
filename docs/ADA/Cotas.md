@@ -9,7 +9,7 @@ $$f(n) \in \Omega(1)$$
 Si las dos son "buenas" hay que quedarse con la mayor que acota inferiormente (la más cercana).
 Para el caso anterior la más cercana como cota inferior a $n^2$ entre `n` y `1` es `n`.
 
----
+___
 ### Notación O - Cota superior - Peor caso
 
 > O(f) -> conjunto de funciones acotadas superiormente por un múltiplo de f.
