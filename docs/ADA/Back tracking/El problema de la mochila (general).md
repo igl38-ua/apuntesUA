@@ -35,6 +35,7 @@ Se construye una tabla con todas las posibles soluciones.
 | (1, 0, 1) |  9   |  69   | VORAZ           |
 | (1, 1, 0) |  10  |  60   | FACTIBLE        |
 | (1, 1, 1) |  17  |  109  | NO FACTIBLE     |
+
 - La solución que tenga el valor más alto es la óptima.
 ## Generación de todas las combinaciones
 

@@ -1,4 +1,5 @@
 Su solución voraz toma en cada caso la moneda de mayor valor posible. 
+
 - Busca minimizar el número de monedas 
 
 > [!note] Datos

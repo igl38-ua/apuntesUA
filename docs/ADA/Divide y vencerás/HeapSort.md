@@ -1,4 +1,5 @@
 Basado en el tipo abstracto de datos llamado cola de prioridad.
+
 - Estructura de árbol binario completo
 - Operaciones:
 	- inserción (push). complejidad constante

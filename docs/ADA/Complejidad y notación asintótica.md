@@ -110,6 +110,7 @@ $$T(n)=
 			P'(n) & n\leq n_0
 		\end{array}
 	\right.$$
+
 - $a\in N$ es una cte.
 - $P(n),\,P'(n)$ son funciones de n
 - $F(n)<n$
@@ -124,6 +125,7 @@ Algoritmo de ordenación por partición
 ### Tipos
 
 Se basa en un elemento pivote, para dividir en dos partes el vector:
+
 - Quicksort primer elemento
 - Quicksort central
 - Quicksort mediana

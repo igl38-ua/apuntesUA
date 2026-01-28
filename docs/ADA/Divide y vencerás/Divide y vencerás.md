@@ -17,14 +17,18 @@ De costes log a exponenciales.
 ### Eficiencia
 
 Depende de:
+
 - N.º subproblemas, h.
 - Tamaño de los subproblemas.
 ### Teorema Maestro
 
 $g(n)=$ tiempo para un tamaño n, sin llamadas recursivas.
 b = cte. de división del tamaño de problema.
+
 $$T(n)=h\,T(\frac{n}{b})+g(n)$$
+
 Solución general:
+
 - Suponiendo $g(n)\in O(n^k)$
 $$T(n) \in
 	\left\{
@@ -37,9 +41,12 @@ $$T(n) \in
 ### Teorema de reducción
 
 Los mejores resultados en cuanto al coste se consiguen cuando los subproblemas son aprox del mismo tamaño. 
+
 - Caso especial, cumple el teorema de reducción ($b=h=a$).
 $g(n) \in O(n^k)$
+
 $$T(n)=a\,T(\frac{n}{a})+g(n)$$
+
 $$ T(n) = \begin{cases} \Theta(n^k) & k > 1 \\ \Theta(n \log n) & k = 1 \\ \Theta(n) & k < 1\end{cases} $$
 
 ___

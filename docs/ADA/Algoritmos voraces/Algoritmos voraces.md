@@ -1,6 +1,7 @@
 # Definición
 
 Los algoritmos voraces eligen una solución local óptima en cada paso con la esperanza de llegar a una solución general óptima.
+
 - Descompone el problema en un conjunto de decisiones.
 - Elige la más prometedora.
 - No reconsideras las decisiones ya tomadas. 

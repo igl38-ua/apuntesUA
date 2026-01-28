@@ -128,6 +128,7 @@ Es una función lambda que devuelve un booleano. `[&v,&w]` le especifica los vec
 
 n = número de elementos.
 Cuando hay un sort la complejidad temporal es de $O(n \log n)$, luego:
+
 - $O(n \log n)$ por el sort
 - $O(n)$, por el bucle final
 - 

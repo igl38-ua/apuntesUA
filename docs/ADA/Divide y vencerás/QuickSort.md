@@ -1,4 +1,5 @@
  Algoritmo de ordenación por partición.
+
 - Se selecciona un **elemento pivote** central que divide el vector dos.
 	- En la parte izquierda van los elementos menores que el pivote.
 	- En la parte derecha van los elementos mayores que el pivote.
@@ -6,6 +7,7 @@
 # QuickSort (pivote primer elemento)
 
 Criterio librerías STL.
+
 - **first**: primer elemento del vector (incluido).
 - **last**: apunta a uno fuera, al siguiente. Al primero que no está en el vector.
 
@@ -32,6 +34,7 @@ void quicksort(vector<int> &v) { quicksort(v, 0, v.size()); }
 ```
 
 Tamaño del problema -> n = last - first
+
 - **Mejor caso**: subproblemas (n/2, n/2).
 	Cuando el pivote esta en medio.
 $$T(n) \in
@@ -41,6 +44,7 @@ $$T(n) \in
 			O(n)+2T(\frac{\large n}{2}) & n>1
 		\end{array}
 	\right.$$
+
 - **Peor caso**: subproblemas (0, n-1) o (n-1, 0).
 	Cuando el pivote se queda a uno de los lados.
 $$T(n) \in
@@ -54,7 +58,9 @@ ___
 ## Mejor caso
 
 ![item](../Media/quicksort.png)
+
 $$\frac{n}{2^k}=1 \rightarrow 2^k=n \rightarrow log_2(2^k)=log_{\large 2}\, n \rightarrow k=log_2\,n$$
+
 ## Peor caso
 
 ![item](../Media/quicksort%201.png)

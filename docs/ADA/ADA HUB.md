@@ -12,6 +12,7 @@ La programación dinámica en contraste con [Divide y vencerás](Divide%20y%20ve
 
 ### Definición
 Los algoritmos voraces eligen una solución local óptima en cada paso con la esperanza de llegar a una solución general óptima.
+
 - Descompone el problema en un conjunto de decisiones.
 - Elige la más prometedora.
 - No reconsideras las decisiones ya tomadas. 
@@ -30,5 +31,6 @@ Se utiliza para resolver problemas de optimización. Este método consiste en di
 # [Ecuaciones de recurrencia](Ecuaciones%20de%20recurrencia.md)
 # [Tipos del Problema de la mochila](Tipos%20del%20Problema%20de%20la%20mochila.md)
 # [Conceptos clave](Conceptos%20clave.md)
+
 - Subestructura óptima o principio de optimalidad
 # [PDF ADA](ada-nuevo.pdf)

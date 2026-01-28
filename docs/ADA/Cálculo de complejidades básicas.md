@@ -33,19 +33,24 @@ void transpose(mat& A){
 ```
 
 $$T_d(d)=\underbrace{2+2(d-1)}_{\large{bucle\,exterior}}+\underbrace{\sum_{i=1}^{d-1}{(2+3i)}}_{\large interior}=···=O(d^2)$$
+
 ### Complejidad bucle interior
 
 2 + 3i 
+
 - 2 + 2i -> bucle for normal
 - i -> el swap se realiza i veces porque depende del número de iteraciones del bucle interior (i).
 - El sumatorio va desde 1 hasta d-1 porque en el bucle exterior hay un menor estricto (i < d).
 ### Complejidad bucle exterior
 
 2 + 2(d - 1) 
+
 - d - 1 -> el bucle for empieza en 1.
 
 La complejidad se calcula en base a lo que ocupa la matriz en memoria pero el cálculo está hecho en base a d, que es el tamaño de la matriz cuadrada (tamaño de problema) $s=d^2$, luego:
+
 $$T_s(s)=T_d(d)=O(d^2)=O(s)$$
+
 **Complejidad:** lineal $O(s)$
 
 ---
@@ -82,11 +87,15 @@ El bucle se ejecuta d veces.
 ___
 
 La complejidad del algoritmo se calcula en base al tamaño de la matriz, luego:
+
 $$T_d(d)=O(d^3)$$
+
 La complejidad con respecto al tamaño del problema se calcula de la siguiente manera:
 
 tamaño de problema = $s=2d^2$ -> $d=\sqrt{\frac{\Large s}{\large 2}}$
+
 $$T_s(s)=T_d(d)=O(d^3)=O((\sqrt{\frac{s}{2}})^{\large 3})=O(s^{\frac{\Large 3}{\Large 2}})$$
+
 > Complejidad espacial -> para realizar su labor cuanta memoria necesitaría
 > Complejidad temporal -> evalúa el coste temporal 
 
@@ -112,6 +121,7 @@ size_t find( const vector &v, int z ) {
 
 El elemento que se busca es el **primer elemento** del vector.
 No depende del tamaño del vector. La ejecución del bucle se realiza una vez. 
+
 - for
 	- asignación -> 1
 	- comparación -> 1
@@ -124,6 +134,7 @@ Total: 4
 ### Peor caso
 
 Cuando no se encuentra el elemento en el vector.
+
 - for 
 	- asignación -> 1
 	- casos del for -> 3n (n veces, tamaño del vector)
@@ -164,7 +175,9 @@ void selection_sort(vector<T> &v) {
 ```
 
 **No hay mejor y peor caso**. Para que lo hubiera tendría que depender del contenido del vector no del tamaño del vector. No modifica los elementos del vector, luego la ejecución del bucle for siempre se realiza n veces, siendo n el tamaño del vector.
+
 $$\sum^{n-1}_{i=0}\,\sum^n_{j=i+1}1$$
+
 Sumatorio para el for interior: $(n-1)+(n-2)+···+1$, se podría sustituir por $i-1$.
 
 > Dos bucles for ejecutados de forma lineal y dependientes de n ambos -> complejidad exponencial
@@ -248,7 +261,9 @@ $$T(n) \in
 			O(1)+T(\frac{n}{2}) & n>0 & recursividad
 		\end{array}
 	\right.$$
+
 $$T(n) \in O(log\, n)$$
+
 El tamaño del problema se reduce al reducirse el count a la mitad con cada paso de programa.
 
 ---
@@ -280,5 +295,7 @@ $$T(n) \in
 		\end{array}
 	\right.$$
 Recurrencia por sustitución
+
 $$\sum_{j=1}^{n}=\frac{n(n+1)}{2}+1$$
+
 $$T(n)\in O(n^2)$$

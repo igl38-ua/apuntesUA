@@ -11,14 +11,19 @@
 > - $W$ es la capacidad de la mochila
 
 - La secuencia óptima de decisiones maximiza:
+
 $$\sum_{i=1}^{n}x_iv_i$$
+
 Con las restricciones:
+
 $$\sum_{i=1}^{n}x_iv_i \le W$$
+
 $$\forall i:1 \le i \le n, x_i \in \{0,1\}$$
 
 El peso que lleva la mochila debe ser menor o igual que el peso que aguanta la mochila (peso total).
 
 El problema se representa con los objetos 1 hasta k y capacidad C.
+
 - Problema inicial: knapsack(n, W).
 
 ___
@@ -28,7 +33,9 @@ Las decisiones se toman en orden descendente: $x_n, x_{n-1},...x_1$
 ### Caso base
 
 0 elementos.
+
 $$knapsack(0, W)=0$$
+
 ### Recursividad
 
 n elementos.
@@ -72,9 +79,13 @@ $$T(n) =
 		\end{array}
 	\right.$$
 Término general
+
 $$T(n)=2^k-1+2^k\,T(n-k)$$
+
 Terminará cuando $n-k=0$:
+
 $$T(n)=2^n-1+2^n \in O(2^n)$$
+
 > Solo puede haber nW problemas distintos.
 
 Mediante esta implementación se pueden dar subproblemas repetidos en las llamadas recursivas.
@@ -110,8 +121,11 @@ Almacena los resultados intermedios en la matriz.
 ### Complejidad temporal
 
 Es la misma que para el caso recursivo con almacén.
+
 $$T(n,W)=1+\sum_{i=1}^n1+\sum_{i=1}^2\sum_{j=1}^W 1=1+n+nW$$
+
 $$T(n,W)\in O(nW)$$
+
 ### Complejidad espacial
 
 $$T_s(n,W)\in O(nW)$$

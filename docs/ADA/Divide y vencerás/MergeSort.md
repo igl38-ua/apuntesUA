@@ -55,4 +55,5 @@ $$T(n) \in
 		\end{array}
 	\right.$$
 Complejidad espacial: $O(n)$
+
 - Como hay una llamada al merge la complejidad espacial no es constante.

@@ -1,7 +1,11 @@
 Para el caso:
+
 $$f(n) = n^2 + n + 2$$
+
 $$f(n) \in \Omega(n)$$
+
 $$f(n) \in \Omega(1)$$
+
 Si las dos son "buenas" hay que quedarse con la mayor que acota inferiormente (la más cercana).
 Para el caso anterior la más cercana como cota inferior a $n^2$ entre `n` y `1` es `n`.
 

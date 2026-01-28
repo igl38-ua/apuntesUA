@@ -1,6 +1,7 @@
 > Añadir aristas evitando ciclos
 
 Kruskal va construyendo un bosque de árboles que va uniendo hasta que acaba con un árbol de recubrimiento de coste mínimo.
+
 - Comienza con un conjunto de árboles (bosque) y agrega aristas para unir estos árboles.
 - Se enfoca en las aristas, seleccionando la de menor peros que no forme un ciclo hasta conectar todos los nodos en un solo árbol.
 

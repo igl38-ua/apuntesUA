@@ -3,9 +3,13 @@ El número total de formas distintas de cortar el tubo es de $2^{n-1}$, porque e
 # Solución por divide y vencerás
 
 Se busca la descomposición en k número de elementos mediante la que se pueda obtener el precio máximo. i son las formas posibles de cortar.
+
 $$n=i_1+i_2+···+i_k$$
+
 Precio: 
+
 $$r_n=p_{i_1}+p_{i_2}+···+p_{i_k}$$
+
 Se va cortando el tubo haciendo llamadas recursivas después de guardar los valores para cada caso posible de n, reduciendo el número de elementos en cada iteración.
 
 ```c++

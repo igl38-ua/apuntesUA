@@ -16,6 +16,7 @@ Si $(P_{A,B})$ es el camino óptimo desde $(A)$ hasta $(B)$, y este camino pasa 
 ### Ejemplo en Programación Dinámica: Problema de la Mochila
 
 En el problema de la mochila, queremos maximizar el valor total de los ítems seleccionados sin exceder la capacidad de la mochila.
+
 - **Problema Original**: Maximizar el valor total de los ítems seleccionados que no excedan la capacidad de la mochila.
 - **Subproblema**: Si consideramos la decisión de incluir o no un ítem en particular, el problema puede dividirse en subproblemas que consisten en maximizar el valor total de los ítems seleccionados para las capacidades reducidas de la mochila.
 
@@ -23,6 +24,7 @@ Si \(K(n, W)\) representa el valor máximo para \(n\) ítems y capacidad \(W\), 
 $K(n, W) = \max \left( K(n-1, W), v_n + K(n-1, W-w_n) \right)$
 
 Aquí:
+
 - $(K(n-1, W))$ es el valor máximo sin incluir el ítem $(n)$.
 - $(v_n + K(n-1, W-w_n))$ es el valor máximo al incluir el ítem $(n)$, donde $(v_n)$ es el valor del ítem $(n)$ y $(w_n)$ es su peso.
 ### Principio de Optimalidad y Algoritmos Voraces

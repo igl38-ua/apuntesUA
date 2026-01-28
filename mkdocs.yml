@@ -18,6 +18,7 @@ theme:
 markdown_extensions:
   - pymdownx.arithmatex
   - pymdownx.superfences
+  - nl2br
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
