@@ -7,7 +7,7 @@ Divide y vencerás divide el problema principal en subproblemas independientes, 
 ## [Programación dinámica](Programación%20dinámica/Programación%20dinámica.md)
 
 ### Definición
-La programación dinámica en contraste con [Divide y vencerás](../Divide%20y%20vencerás/Divide%20y%20vencerás.md) utiliza una matriz que almacena resultados intermedios ya resueltos para evitar recalcular estos resultados, lo que reduce el tiempo de ejecución. 
+La programación dinámica en contraste con [Divide y vencerás](Divide%20y%20vencerás/Divide%20y%20vencerás.md) utiliza una matriz que almacena resultados intermedios ya resueltos para evitar recalcular estos resultados, lo que reduce el tiempo de ejecución. 
 ## [Algoritmos voraces](Algoritmos%20voraces/Algoritmos%20voraces.md)
 
 ### Definición
