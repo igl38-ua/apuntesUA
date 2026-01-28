@@ -107,5 +107,7 @@ nav:
     - Protocolos:
       - RIP: REDES/Protocolos/RIP.md
       - OSPF: REDES/Protocolos/OSPF.md
+      - BGP: REDES/Protocolos/BGP.md
     - Formulario: REDES/Formulario.md
     - Esquema de contenido: REDES/Esquema de contenido.md
+    - Estándares de redes: REDES/TEMA 4/Estándares de redes LAN.md
