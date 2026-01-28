@@ -1,7 +1,6 @@
 /* Cambiar el estilo de la negrita */
 strong {
-    font-weight: bold;
-    color: #ffffff; 
+    font-weight: bold; 
 }
 
 /* Estilo para los encabezados de nivel 1 */
