@@ -2,7 +2,7 @@
 
 NO VORAZ, pero necesario para Kruskal.
 
-[[Algoritmo de Kruskal]]
+[Algoritmo de Kruskal](Algoritmo%20de%20Kruskal.md)
 
 Se trabaja sobre particiones, las cuales son subconjuntos de un conjunto principal tales que la unión de estos, sin solaparse, formen el conjunto de elementos totales.
 

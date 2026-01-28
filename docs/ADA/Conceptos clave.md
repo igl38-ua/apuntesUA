@@ -1,6 +1,6 @@
 # Subestructura óptima o principio de optimalidad
 
-Visto en [[Programación dinámica]].
+Visto en [Programación dinámica](Programación%20dinámica/Programación%20dinámica.md).
 
 Permite descomponer un problema grande en subproblemas más manejables, asegurando que la combinación de soluciones óptimas de subproblemas conduzca a una solución óptima del problema original.
 

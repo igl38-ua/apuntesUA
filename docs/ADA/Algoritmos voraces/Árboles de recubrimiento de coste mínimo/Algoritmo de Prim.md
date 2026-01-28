@@ -132,4 +132,4 @@ La complejidad es $O(n^2)$ porque las llamadas a update_index y min_edge son suc
 ---
 # Comparativa con Kruskal 
 
-[[Algoritmo de Kruskal#Comparativa con Prim|Comparativa con Prim]]
+[Comparativa con Prim](Algoritmo%20de%20Kruskal.md#Comparativa%20con%20Prim)

@@ -122,8 +122,8 @@ ___
 ![item](../Media/poda-optimista-mochila-continua.png)
 
 - Interesa que los mecanismos de poda actúen lo antes posible. 
-- Una poda ajustada se puede obtener utilizando la solución voraz al problema de la [[El problema de la mochila continua|mochila continua]].
--  La solución de la mochila continua es siempre mayor que la solución al de la [[El problema de la mochila discreta (sin fraccionamiento)|mochila discreta]].
+- Una poda ajustada se puede obtener utilizando la solución voraz al problema de la [mochila continua](../Algoritmos%20voraces/El%20problema%20de%20la%20mochila%20continua.md).
+-  La solución de la mochila continua es siempre mayor que la solución al de la [mochila discreta](../Algoritmos%20voraces/El%20problema%20de%20la%20mochila%20discreta%20(sin%20fraccionamiento).md).
 
 ```c++
 double knapsack(const vector<double> &v, const vector<double> &w, double W){

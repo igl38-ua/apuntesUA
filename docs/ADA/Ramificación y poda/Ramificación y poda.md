@@ -5,7 +5,7 @@ Se utiliza para resolver problemas de optimización. Este método consiste en di
 ___
 # Eficiencia
 
-> Cuando se utiliza la cola de prioridad se da el paso de [[Back tracking]] a [[Ramificación y poda]].
+> Cuando se utiliza la cola de prioridad se da el paso de [Back tracking](../Back%20tracking/Back%20tracking.md) a [Ramificación y poda](Ramificación%20y%20poda.md).
 
 Al igual que en back tracking, las cotas pueden ser tanto estimaciones de valores como valores intermedios calculados mediante otros métodos como los voraces. Estos dan soluciones rápidas y buenas, pero no óptimas. 
 

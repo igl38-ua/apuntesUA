@@ -1,12 +1,12 @@
 # Definición
 
-La programación dinámica en contraste con [[Divide y vencerás]] utiliza una matriz que almacena resultados intermedios ya resueltos para evitar recalcular estos resultados, lo que reduce el tiempo de ejecución. 
+La programación dinámica en contraste con [Divide y vencerás](../Divide%20y%20vencerás/Divide%20y%20vencerás.md) utiliza una matriz que almacena resultados intermedios ya resueltos para evitar recalcular estos resultados, lo que reduce el tiempo de ejecución. 
 
 ___
 # Implementaciones
 
-[[El problema de la mochila (knapsack problem)]]
-[[Coeficiente binomial]]
+[El problema de la mochila (knapsack problem)](El%20problema%20de%20la%20mochila%20(knapsack%20problem).md)
+[Coeficiente binomial](Coeficiente%20binomial.md)
 
 ___
 # Casos

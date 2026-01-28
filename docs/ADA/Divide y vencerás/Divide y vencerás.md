@@ -3,9 +3,9 @@
 Divide y vencerás divide el problema principal en subproblemas independientes, resuelve cada subproblema por separado y luego combina los resultados para formar la solución del problema original.
 # Implementaciones
 
-[[QuickSort|QuickSort]]
-[[2 Areas/ADA/Divide y vencerás/HeapSort]]
-[[MergeSort]]
+[QuickSort](QuickSort.md)
+[HeapSort](HeapSort.md)
+[MergeSort](MergeSort.md)
 # Esquema DyV
 
 Todos los algoritmos implementados mediante esta técnica siguen un esquema general de instanciación.

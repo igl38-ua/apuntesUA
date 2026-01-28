@@ -3,10 +3,10 @@
 En back tracking se exploran todas las soluciones posible de manera sistemática para encontrar **una solución** o **todas las soluciones válidas** a un problema. Construye la solución paso a paso y abandona (retrocede) las soluciones parciales que no cumplen las condiciones del problema (las que no dan una solución válida).
 # Implementaciones
 
-[[El problema de la mochila (general)]]
-[[Permutaciones]]
-[[El problema de las n reinas]]
-[[Viajante de comercio]]
+[El problema de la mochila (general)](El%20problema%20de%20la%20mochila%20(general).md)
+[Permutaciones](Permutaciones.md)
+[El problema de las n reinas](El%20problema%20de%20las%20n%20reinas.md)
+[Viajante de comercio](Viajante%20de%20comercio.md)
 
 ___
 # Podas

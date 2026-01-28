@@ -33,7 +33,7 @@ Complejidad **n** por el bucle final y **log n** por el sort.
 ___
 # Comparativa con Prim
 
-[[Algoritmo de Prim]]
+[Algoritmo de Prim](Algoritmo%20de%20Prim.md)
 
 Para el peor caso el número de arcos de un grafo es $E \in O(V^2)$.
 Cuando el grafo está completamente lleno la complejidad del de **Kruskal** es peor que la de **Prim**, $O(V^2·\log V)$ frente a $O(V^2)$.

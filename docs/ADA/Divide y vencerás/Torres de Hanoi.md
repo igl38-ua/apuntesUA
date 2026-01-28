@@ -11,7 +11,7 @@ La talla del problema es n-1.
 
 ![item](../Media/hanoi%201.png)
 
-Para la primera parte de la resolución (verde) se trata de una progresión geométrica como la de la página 3 de [[am.pdf]]:
+Para la primera parte de la resolución (verde) se trata de una progresión geométrica como la de la página 3 de [am](../am.pdf):
 $$\sum_{i=0}^{n} 2^i=2^{n+1}-1$$
 Luego la ecuación de recurrencia y la complejidad:  
 $$T(n)=
