@@ -3,3 +3,4 @@ mkdocs-material>=9.7
 pymdown-extensions>=10.0
 nl2br
 admonition
+toc
