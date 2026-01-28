@@ -25,3 +25,16 @@ python3 -m venv .venv
 ```bash
 .venv/bin/mkdocs build
 ```
+
+## Deploy a GitHub Pages (rama `gh-pages`)
+
+Esto compila y publica **solo** el contenido generado (lo de `site/`) en la rama `gh-pages`.
+
+```bash
+.venv/bin/mkdocs gh-deploy --clean --force
+```
+
+Notas:
+
+- Por defecto usa la rama `gh-pages` y publica en la raíz del branch.
+- Si GitHub Pages no apunta a esa rama, revisa Settings → Pages y selecciona `gh-pages`.

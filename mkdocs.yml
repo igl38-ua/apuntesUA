@@ -5,6 +5,15 @@ theme:
   name: material
   features:
     - navigation.tabs
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
 
 markdown_extensions:
   - pymdownx.arithmatex
@@ -94,4 +103,3 @@ nav:
       - OSPF: REDES/Protocolos/OSPF.md
     - Formulario: REDES/Formulario.md
     - Esquema de contenido: REDES/Esquema de contenido.md
-
