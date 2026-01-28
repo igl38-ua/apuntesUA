@@ -40,7 +40,7 @@ Asigna una etiqueta por cada partición.
 **find** consulta la etiqueta .
 **union** vuelve a etiquetar los elementos de uno de los bloques. 
 
-![item](../../Media/quick-find.png)
+![item](../../../img/ada/quick-find.png)
 ## Complejidad
 
 - find: $O(1)$
@@ -49,20 +49,20 @@ Asigna una etiqueta por cada partición.
 
 Representando las particiones como árboles.
 
-![item](../../Media/quick-union.png)
+![item](../../../img/ada/quick-union.png)
 
-![item](../../Media/conjuntos-disjuntos.png)
+![item](../../../img/ada/conjuntos-disjuntos.png)
 ## Mejoras
 
-![item](../../Media/conjuntos-disjuntos%201.png)
+![item](../../../img/ada/conjuntos-disjuntos%201.png)
 ## Ejemplos
 
-![item](../../Media/ejemplos-conjuntos-disjuntos.png)
+![item](../../../img/ada/ejemplos-conjuntos-disjuntos.png)
 
 Siempre se une el árbol pequeño a la raíz del más grande. Si son iguales da igual.
 
 ___
 # Conjuntos disjuntos (eficiente)
 
-![item](../../Media/conjuntos-disjuntos-eficiente.png)
-![item](../../Media/conjuntos-disjuntos-eficiente%201.png)
+![item](../../../img/ada/conjuntos-disjuntos-eficiente.png)
+![item](../../../img/ada/conjuntos-disjuntos-eficiente%201.png)

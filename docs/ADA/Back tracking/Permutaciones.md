@@ -8,5 +8,5 @@ Muestra todas las permutaciones de una secuencia (0,...,n-1).
 - Cuando se llega a una hoja se imprime. 
 - Si el elemento c que se comprueba ya ha aparecido antes se mete en el vector y se avanza. 
 
-![item](../Media/permutaciones.png)
+![item](../../img/ada/permutaciones.png)
 

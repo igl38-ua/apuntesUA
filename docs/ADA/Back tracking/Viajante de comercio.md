@@ -1,6 +1,6 @@
 Dado un Grafo ponderado $g = (V, E)$ con pesos no negativos hay que encontrar un ciclo hamiltoniano de coste mínimo. 
 
-![item](../Media/viajante-de-comercio.png)
+![item](../../img/ada/viajante-de-comercio.png)
 
 La función **round** calcula la longitud de un camino, dado un grafo y el vector de su posible solución.
 
@@ -14,7 +14,7 @@ ___
 Guarda el mínimo entre el shortest actual y el nuevo calculado.
 Hace las permutaciones pertinentes con el swap para probar el resto de ciudades.
 
-![item](../Media/viajante-de-comercio%201.png)
+![item](../../img/ada/viajante-de-comercio%201.png)
 
 shortest se inicializa al máximo porque queremos minimizarlo.
 
@@ -40,7 +40,7 @@ ___
 
 ## Las n mejores soluciones
 
-![item](../Media/n-mejores-soluciones.png)
+![item](../../img/ada/n-mejores-soluciones.png)
 
 Utiliza un cola de prioridad que siempre está ordenada.
 Cada vez que tenemos una hoja, sacamos la longitud y comprobamos si merece la pena meterla entre las n mejores. Para eso comprobamos la peor de las que tenemos guardadas ( el top, por la manera en la que la cola de prioridad está ordenada de mayor a menor). 

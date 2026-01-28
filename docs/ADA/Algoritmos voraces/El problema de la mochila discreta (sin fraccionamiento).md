@@ -6,6 +6,6 @@
 
 El método voraz no resuelve el problema.
 
-![item](../Media/mochila-discreta.png)
+![item](../../img/ada/mochila-discreta.png)
 
 

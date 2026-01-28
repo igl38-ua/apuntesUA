@@ -7,10 +7,10 @@ Definiciones:
 - **Servicios**: funciones que ofrece una capa a su capa superior.
 - **Interfaz**: normas para la comunicación entre capas adyacentes.
 ### Ejemplo de arquitectura de red
-![item](../../img/arquitectura_de_red.png)
+![item](../../img/redes/arquitectura_de_red.png)
 ## 2.2 Modelo de la Arquitectura TCP/IP (Internet)
 Modelo de capas de TCP/IP:
-![item](../../img/modelo_de_capas.png)
+![item](../../img/redes/modelo_de_capas.png)
 
 PDU - Protocol Data Unit. Unidad de datos específica de un protocolo.
 

@@ -2,4 +2,4 @@ Utiliza polinomios y operaciones algebraicas para generar un valor de CRC de los
 
 Se utiliza en protocolos como Ethernet para asegurar la integridad de datos.
 
-![item](../../../img/CRC.png)
+![item](../../../img/redes/CRC.png)

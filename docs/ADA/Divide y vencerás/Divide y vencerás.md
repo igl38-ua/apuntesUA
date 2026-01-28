@@ -10,7 +10,7 @@ Divide y vencerás divide el problema principal en subproblemas independientes, 
 
 Todos los algoritmos implementados mediante esta técnica siguen un esquema general de instanciación.
 
-![item](../Media/dyv.png)
+![item](../../img/ada/dyv.png)
 ## Análisis de eficiencia
 
 De costes log a exponenciales.
@@ -56,7 +56,7 @@ ___
 
 Añade pasos como is_solved() para no repetir pasos de programa.
 
-![item](../Media/dyv-a-pd.png)
+![item](../../img/ada/dyv-a-pd.png)
 ## Paso a Programación dinámica iterativa
 
-![item](../Media/dyv-a-pd%201.png)
+![item](../../img/ada/dyv-a-pd%201.png)

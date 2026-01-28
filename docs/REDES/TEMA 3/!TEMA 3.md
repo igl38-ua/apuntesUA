@@ -6,7 +6,7 @@
 > Una señal está compuesta por infinitos armónicos.
 ## Transmisión de una señal de datos
 ### Señales de Fourier
-![item](../../img/fourier.png)
+![item](../../img/redes/fourier.png)
 
 Ancho de banda de un medio físico: $B=f_c-f_o\ Hz$ .
 
@@ -29,9 +29,9 @@ Se manifiesta como picos de alta energía y corta duración en la señal. Puede 
 Puede causar errores de bits significativos en las transmisiones de datos.
 ## Señalización en banda base
 ### Codificación binaria
-![item](../../img/cod_binaria.png)
+![item](../../img/redes/cod_binaria.png)
 ### Codificación Manchester
-![item](../../img/cod_manchester.png)
+![item](../../img/redes/cod_manchester.png)
 ## Señalización en banda modulada
 [Modulaciones y usos](Modulaciones y usos.md) 
 
@@ -46,30 +46,30 @@ Señal portadora transmitida modificada según la señal moduladora.
 >Señal moduladora: DIGITAL
 >Señal portadora: ANALÓGICA (la onda que se transmite)
 #### ASK (Amplitude Shift Keying)
-![item](../../img/ask.png)
+![item](../../img/redes/ask.png)
 
 Se utiliza en aplicaciones donde el ancho de banda es limitado. Radiofrecuencia de baja velocidad y comunicaciones ópticas.
 #### FSK (Frequency Shift Keying)
-![item](../../img/fsk.png)
+![item](../../img/redes/fsk.png)
 
 En FSK dos frecuencias portadoras distintas representan los dos valores de datos binarios (0 y 1) en una señal digital.
 
 Se usa en aplicaciones de radiofrecuencia, telemetría y primeras generaciones de telefonía móvil. Comunicaciones inalámbricas de baja velocidad como bluetooth. 
 #### PSK (Phase Shift Keying)
-![item](../../img/psk.png)
+![item](../../img/redes/psk.png)
 
 Cuando la entrada digital es 1 cambia la fase de la onda.
 
 Comúnmente usado en aplicaciones que requieren alta eficiencia espectral como la transmisión de datos por modem sobre líneas telefónicas, en sistemas de comunicación por satélite y redes Wifi.
 ### Modulación analógica en múltiples niveles
 #### QPSK (Quadrature Phase Shift Keying)
-![item](../../img/qpsk.png)
+![item](../../img/redes/qpsk.png)
 
 Como PSK pero con dos bits por cuadrante. 
 
 Comunicación vía satélite, servicios de televisión por satélite y algunas formas de comunicaciones móviles. 
 #### QAM (Quadrature Amplitude Modulation)
-![item](../../img/qam.png)
+![item](../../img/redes/qam.png)
 
 Combina ASK y PSK para crear diferentes amplitudes y fases de la onda portadora, lo que permite transmitir múltiples bits por símbolo.
 Ampliamente utilizada en aplicaciones que requieren una alta eficiencia espectral y capacidad de transmisión, como la televisión por cable digital, modems de cable y tecnologías de comunicación móvil como LTE y 5G.
@@ -77,16 +77,16 @@ Ampliamente utilizada en aplicaciones que requieren una alta eficiencia espectra
 >Señal moduladora: ANALÓGICA (la onda que se transmite)
 >Señal portadora: DIGITAL
 #### PCM (Pulse Code Modulation)
-![item](../../img/pcm.png)
+![item](../../img/redes/pcm.png)
 
 Uso en sistemas de comunicación de audio digital, telefonía digital y transmisión de audio sobre internet. También en la grabación de vídeo digital y transmisión de datos en redes de telecomunicaciones.
 ## Multiplexión
 [Multiplexión](Multiplexión.md)
 ### Multiplexión por división de frecuencias (FDM)
-![item](../../img/fdm.png)
+![item](../../img/redes/fdm.png)
 
 ### Multiplexión por división en el tiempo (TDM)
-![item](../../img/tdm.png)
+![item](../../img/redes/tdm.png)
 ## Medios de transmisión
 [Medios de transmisión](Medios de transmisión.md)
 ### Cable par paralelo

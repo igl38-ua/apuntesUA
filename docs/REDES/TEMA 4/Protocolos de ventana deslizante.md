@@ -10,7 +10,7 @@ Definiciones:
 - **Tamaño de ventana del emisor ($W_e$)**: Número de secuencias en la ventana del emisor. 
 - **Tamaño de ventana del receptor ($W_r$)**: Número de secuencias en la ventana del receptor. 
 #### Funcionamiento
-![item](../../img/ventana_deslizante.png)
+![item](../../img/redes/ventana_deslizante.png)
 
 El tamaño de la ventana del *emisor* **VARÍA**, la del *receptor* es **CONSTANTE**.
 #### Protocolo de ventana deslizante con numeración de 1 bit
