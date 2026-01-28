@@ -10,7 +10,7 @@ Busca el arco de mínimo peso que va de un **vértice explorado** a uno **no exp
 Si el grafo tiene **n** elementos, tendrá **n-1** arcos.
 # Ineficiente
 
-![[Prim.png]]
+![item](../../Media/Prim.png)
 
 > [!note] Datos
 > **edge**: representa un arco

@@ -23,7 +23,7 @@ TCP - Transmission Control Protocol.
 - Flags: **ACK**, **PSH** (si = 1, indica que la capa de transporte debe pasar los datos a la capa de aplicación), **RST** (rechazo de la conexión), **SYN** (solicitar establecer una conexión) y **FIN** (liberar la conexión).
 - Ventana.
 
-![[Temas Redes.pdf#page=247]]
+![item](../../Temas%20Redes.pdf#page=247)
 
 En una conexión TCP al recibir un paquete TCP, después del proceso de conexión, el paquete necesita tener las cabeceras IP y ETH. Pero no se puede enviar porque en MTU de las redes ethernet es 1500. 
 Un paquete TCP tiene que llegar a su destino sin ser fragmentado para que la red no sufra congestión. Se establece el MSS (cantidad máxima de datos de un paquete TCP).

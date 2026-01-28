@@ -84,7 +84,7 @@ ___
 
 Para evitar repeticiones hay que evaluar si el problema ha sido resuelto para anotarlo o no, y de esa manera resolverlo o utilizar la solución ya anotada. Esta es la solución de **memoization**, recursivo con almacén.
 
-![[pd-almacen.png]]
+![item](../Media/pd-almacen.png)
 
 Utiliza una matriz M, inicializada a un valor centinela (valor imposible de knapsack). Esta matriz almacena las soluciones y los cálculos. De esta manera, antes de calcular otra solución para el problema se comprueba con la matriz si esa solución ya ha sido resuelta. 
 Si ha sido resuelta se utiliza ese valor guardado. En caso contrario se resuelve y se anota la solución.
@@ -97,16 +97,16 @@ Matriz n * W.
 
 No hace falta centinela pero mantiene una matriz de almacenamiento.
 
-![[sol-iterativa.png]]
+![item](../Media/sol-iterativa.png)
 
 ___
 ## Solución iterativa mejor
 
 Almacena los resultados intermedios en la matriz.
 
-![[sol-iterativa-mejor.png]]
+![item](../Media/sol-iterativa-mejor.png)
 
-![[soluciones-parciales.png]]
+![item](../Media/soluciones-parciales.png)
 ### Complejidad temporal
 
 Es la misma que para el caso recursivo con almacén.
@@ -121,11 +121,11 @@ ___
 
 Almacena en una matriz de booleanos si las posiciones han sido utilizadas o no y extrae la solución en base a esa matriz.
 
-![[sol-iterativa-extraccion.png]]
+![item](../Media/sol-iterativa-extraccion.png)
 
 ---
 # Subestructura óptima o Principio de Optimalidad
 
-![[principio-de-optimalidad.png]]
+![item](../Media/principio-de-optimalidad.png)
 
 

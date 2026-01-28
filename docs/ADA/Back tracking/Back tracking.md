@@ -32,7 +32,7 @@ ___
 ___
 # Esquema general recursivo
 
-![[vuelta-atras.png]]
+![item](../Media/vuelta-atras.png)
 
 Utilizar algoritmos voraces en cotas pesimistas permite reducir el espacio de búsqueda del algoritmo. Pueden eliminar ramas del árbol de búsqueda que es probable que no conduzcan a una solución mejor. Esto mejor el rendimiento y la eficiencia (complejidad temporal). 
 Los algoritmos voraces suelen encontrar mejores soluciones porque se basan en la estimación del coste mínimo posible de una solución. 

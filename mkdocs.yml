@@ -24,12 +24,50 @@ extra_css:
 
 nav:
   - Inicio: index.md
-  - ADA: ADA/ArbolADA.md
+  - ADA:
+    - ADA HUB: ADA/ADA HUB.md
+    - Conceptos clave: ADA/Conceptos clave.md
+    - Cálculo de complejidades básicas: ADA/Cálculo de complejidades básicas.md
+    - Complejidad y notación asintótica: ADA/Complejidad y notación asintótica.md
+    - Ecuaciones de recurrencia: ADA/Ecuaciones de recurrencia.md
+    - Cotas: ADA/Cotas.md
+    - Tipos del Problema de la mochila: ADA/Tipos del Problema de la mochila.md
+    - Divide y vencerás:
+      - Divide y vencerás: ADA/Divide y vencerás/Divide y vencerás.md
+      - QuickSort: ADA/Divide y vencerás/QuickSort.md
+      - MergeSort: ADA/Divide y vencerás/MergeSort.md
+      - HeapSort: ADA/Divide y vencerás/HeapSort.md
+      - Torres de Hanoi: ADA/Divide y vencerás/Torres de Hanoi.md
+      - Corte de tubos: ADA/Divide y vencerás/Corte de tubos.md
+    - Programación dinámica:
+      - Programación dinámica: ADA/Programación dinámica/Programación dinámica.md
+      - Programación dinámica iterativa: ADA/Programación dinámica/Programación dinámica iterativa.md
+      - Coeficiente binomial: ADA/Programación dinámica/Coeficiente binomial.md
+      - El problema de la mochila (knapsack problem): ADA/Programación dinámica/El problema de la mochila (knapsack problem).md
+    - Algoritmos voraces:
+      - Algoritmos voraces: ADA/Algoritmos voraces/Algoritmos voraces.md
+      - El problema de la mochila continua: ADA/Algoritmos voraces/El problema de la mochila continua.md
+      - El problema de la mochila discreta (sin fraccionamiento): ADA/Algoritmos voraces/El problema de la mochila discreta (sin fraccionamiento).md
+      - El problema del cambio: ADA/Algoritmos voraces/El problema del cambio.md
+      - Árboles de recubrimiento de coste mínimo:
+        - Árboles de recubrimiento de coste mínimo: ADA/Algoritmos voraces/Árboles de recubrimiento de coste mínimo/Árboles de recubrimiento de coste mínimo.md
+        - Algoritmo de Prim: ADA/Algoritmos voraces/Árboles de recubrimiento de coste mínimo/Algoritmo de Prim.md
+        - Algoritmo de Kruskal: ADA/Algoritmos voraces/Árboles de recubrimiento de coste mínimo/Algoritmo de Kruskal.md
+        - Conjuntos disjuntos (Disjoint-set): ADA/Algoritmos voraces/Árboles de recubrimiento de coste mínimo/Conjuntos disjuntos (Disjoint-set).md
+    - Back tracking:
+      - Back tracking: ADA/Back tracking/Back tracking.md
+      - El problema de la mochila (general): ADA/Back tracking/El problema de la mochila (general).md
+      - El problema de las n reinas: ADA/Back tracking/El problema de las n reinas.md
+      - Permutaciones: ADA/Back tracking/Permutaciones.md
+      - Viajante de comercio: ADA/Back tracking/Viajante de comercio.md
+    - Ramificación y poda:
+      - Ramificación y poda: ADA/Ramificación y poda/Ramificación y poda.md
+
   - REDES: 
     - Arbol Redes: REDES/ArbolREDES.md
     - Tema 1: REDES/TEMA 1/TEMA 1.md
     - Tema 2. Arquitectura de red: REDES/TEMA 2/TEMA 2.md
-    - Tema 3. Nivel físico : 
+    - Tema 3. Nivel físico: 
       - Tema 3: REDES/TEMA 3/!TEMA 3.md
       - Modulaciones y usos: REDES/TEMA 3/Modulaciones y usos.md
       - Multiplexión: REDES/TEMA 3/Multiplexión.md
@@ -56,5 +94,4 @@ nav:
       - OSPF: REDES/Protocolos/OSPF.md
     - Formulario: REDES/Formulario.md
     - Esquema de contenido: REDES/Esquema de contenido.md
-
 

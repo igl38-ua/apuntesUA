@@ -59,7 +59,7 @@ BGP - Border Gateway Protocol.
 - **BGP Keepalive**: Informa de que un extremo de la comunicación sigue activo ya que TCP no controla que los dos extremos estén activos cuando no intercambian datos.
 - **BGP Notification**: Informa sobre errores en la comunicación BGP (mensajes BGP con errores: rutas incorrectas o incongruentes) y permite el control en la comunicación.
 
-![[Temas Redes.pdf#page=214]]
+![item](../../Temas%20Redes.pdf#page=214)
 #### Conclusiones
 - BGP solo informa de accesibilidad, no de rutas a seguir o de menor coste. 
 - BGP establece conexiones entre pares de routers frontera.

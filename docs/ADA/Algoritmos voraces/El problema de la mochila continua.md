@@ -11,7 +11,7 @@
 - Para resolverlo se necesita un **criterio de selección**.
 - Los elementos de la **solución** no se ordenan, se representan de la misma manera en que está la lista de pesos. El criterio de selección determina el total de cada objeto que entra en la mochila. 
 
-![[posibles-criterios.png]]
+![item](../Media/posibles-criterios.png)
 
 ___
 ## Valor decreciente
@@ -71,10 +71,10 @@ Tercer objeto (**35**). No cabe entero, para que queda en la mochila hay que div
 | --------------------- | -------- | ----------------- |
 | $(1, \frac{4}{5}, 1)$ | 12       | 48 + 28 + 20 = 96 |
 
-![[formalización.png]]
+![item](../Media/formalización.png)
 # Torema. Solución óptima
 
-![[corrección.png]]
+![item](../Media/corrección.png)
 
 $(x_i - y_i) \frac{v_i}{w_i} \ge (x_i - y_i) \frac{v_j}{w_j}$ siempre se cumple.
 

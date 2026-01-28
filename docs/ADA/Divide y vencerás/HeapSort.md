@@ -8,19 +8,19 @@ Basado en el tipo abstracto de datos llamado cola de prioridad.
 	- El valor del padre siempre es mayor que los valores de sus hijos .
 	- El valor de la raíz del árbol es el elemento mayor de la estructura.
 
-![[inserción.png]]
+![item](../Media/inserción.png)
 
-![[extracción.png]]
+![item](../Media/extracción.png)
 
 ___
 ## Extraer
 
-![[sink.png]]
+![item](../Media/sink.png)
 
 ___
 ## Ordenación
 
-![[heapsort.png]]
+![item](../Media/heapsort.png)
 ### Construcción del heap
 
 Dada la lista inicial se va transformando, extrayendo el elemento máximo e insertándolo en el heap hasta que el montículo esta vacío. Esto da como resultado una lista ordenada.

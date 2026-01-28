@@ -6,7 +6,7 @@ Kruskal va construyendo un bosque de árboles que va uniendo hasta que acaba con
 
 Es más eficiente en grafos dispersos, donde el número de aristas es mayor.
 
-![[Kruskal.png]]
+![item](../../Media/Kruskal.png)
 
 - Se recorre el vector y se ordena con una función lambda de menor a mayor.
 - Después de ordenarlo, se recorre la lista de forma ordenada, comprobando primero si el arco seleccionado `r` va de un bloque a otro distinto. Si es un arco elegible se incluye en el vector de la solución y se juntan los bloques.

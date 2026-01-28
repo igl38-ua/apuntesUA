@@ -23,7 +23,7 @@ int tube_cut(const vector<int> &p, const int l){ //p tabla precios, l longitud d
 ___
 ## Complejidad
 
-![[complejidad-solu-recursiva.png]]
+![item](../Media/complejidad-solu-recursiva.png)
 
 ___
 # Solución recursiva con almacén (memoization)

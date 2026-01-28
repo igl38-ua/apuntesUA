@@ -1,6 +1,6 @@
 # SITUACIONES TÍPICAS
 
-![[situaciones-tipicas.png]]
+![item](Media/situaciones-tipicas.png)
 
 ```c++
 for( int i = 1; i < n; i*=2 ) 

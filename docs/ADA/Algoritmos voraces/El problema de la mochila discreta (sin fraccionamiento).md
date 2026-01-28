@@ -6,6 +6,6 @@
 
 El método voraz no resuelve el problema.
 
-![[mochila-discreta.png]]
+![item](../Media/mochila-discreta.png)
 
 

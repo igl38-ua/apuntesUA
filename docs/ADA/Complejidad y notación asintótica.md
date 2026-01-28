@@ -64,7 +64,7 @@ $Θ(f) = O(f)\cupΩ(f)$
 
 Clases más utilizadas:
 
-![[jerarquías de funciones.png]]
+![item](Media/jerarquías%20de%20funciones.png)
 
 ___
 # Cálculo de complejidades

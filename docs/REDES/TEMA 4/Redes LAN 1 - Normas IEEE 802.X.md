@@ -29,7 +29,7 @@ Protocolo de Control de Enlace Lógico (LLC).
 ![item](../../img/LLC.png)
 
 #### Integración TCP/IP con IEEE 802
-![[Temas Redes.pdf#page=130]]
+![item](../../Temas%20Redes.pdf#page=130)
 ### IEEE 802.3 
 Ethernet CSMA/CD.
 Se caracteriza por el uso de un **medio físico compartido** entre todas las estaciones con topología de bus. 
@@ -46,10 +46,10 @@ Emplea cable coaxial grueso, permitiendo una velocidad de 10 Mbps a distancias d
 10Base2 y 10Base5 desaparecieron con la introducción del cable STP.
 MTU máximo es de 1492 bytes.
 
-![[Temas Redes.pdf#page=135]]
+![item](../../Temas%20Redes.pdf#page=135)
 #### Ethernet II (Ethernet DIX)
 No utiliza la capa LLC, permite introducir el datagrama IP en el paquete de nivel MAC.
-![[Temas Redes.pdf#page=136]]
+![item](../../Temas%20Redes.pdf#page=136)
 #### CSMA/CD
 Acceso al medio con detección de portadora y de colisión. Tanto Ethernet 802.3 y Ethernet DIX utilizan el mismo mecanismo para compartir el bus común: CSMA/CD.
 CSMA/CD comprueba el medio físico antes de transmitir un paquete de datos. Su esquema de funcionamiento es **semidúplex**.

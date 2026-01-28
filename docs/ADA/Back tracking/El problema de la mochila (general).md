@@ -9,7 +9,7 @@
 > Objetos no fragmentables y los pesos son valores reales.
 # Restricciones
 
-![[formalizacion-del-problema.png]]
+![item](../Media/formalizacion-del-problema.png)
 
 - Las soluciones son vectores de 0 o 1. 
 - Los valores de x van desde 0 a 1.
@@ -104,7 +104,7 @@ void feasible(const vector<double> &w, double W){
 ___
 ## Poda: cota optimista ingenua
 
-![[cota-optimista-ingenua.png]]
+![item](../Media/cota-optimista-ingenua.png)
 
 ```c++
 double add_rest(const vector<double> &v, size_t k){
@@ -119,7 +119,7 @@ La función add_rest calcula el resto de los objetos que no se han calculado has
 ___
 ## Poda optimista basada en la mochila continua
 
-![[poda-optimista-mochila-continua.png]]
+![item](../Media/poda-optimista-mochila-continua.png)
 
 - Interesa que los mecanismos de poda actúen lo antes posible. 
 - Una poda ajustada se puede obtener utilizando la solución voraz al problema de la [[El problema de la mochila continua|mochila continua]].
@@ -139,12 +139,12 @@ Inicializando el mejor valor con la llamada voraz al problema de la **mochila di
 ___
 ## Cambiando en orden de exploración de los objetos
 
-![[orden-exploracion-objetos.png]]
+![item](../Media/orden-exploracion-objetos.png)
 
 Ordenando previamente el vector se elimina la necesidad de la ordenación en la llamada a knapsack_d, lo que reduce si complejidad de **logarítmica** a **lineal**. También reduce la complejidad general del algoritmo a **lineal**.
 
 ___
 ## Cambiando el orden de explorar las decisiones (expansión)
 
-![[orden-exploracion-decisiones.png]]
+![item](../Media/orden-exploracion-decisiones.png)
 

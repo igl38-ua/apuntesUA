@@ -53,11 +53,11 @@ $$T(n) \in
 ___
 ## Mejor caso
 
-![[quicksort.png]]
+![item](../Media/quicksort.png)
 $$\frac{n}{2^k}=1 \rightarrow 2^k=n \rightarrow log_2(2^k)=log_{\large 2}\, n \rightarrow k=log_2\,n$$
 ## Peor caso
 
-![[quicksort 1.png]]
+![item](../Media/quicksort%201.png)
 
 ---
 # Quickselect
