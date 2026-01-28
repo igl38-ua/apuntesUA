@@ -20,6 +20,7 @@ markdown_extensions:
   - pymdownx.superfences
   - admonition
   - pymdownx.details
+  - pymdownx.mark
   - nl2br
 
 hooks:
@@ -111,3 +112,27 @@ nav:
     - Formulario: REDES/Formulario.md
     - Esquema de contenido: REDES/Esquema de contenido.md
     - Estándares de redes: REDES/TEMA 4/Estándares de redes LAN.md
+
+  - PPSS:
+    - PPSS HUB: PPSS/PPSS HUB.md
+    - S01 - Pruebas del software: PPSS/S01 - Pruebas del software.md
+    - S02 - Pruebas de Caja Blanca: PPSS/S02 - Pruebas de Caja Blanca.md
+    - S03 - Drivers: PPSS/S03 - Drivers.md
+    - S04 - Pruebas de Caja Negra: PPSS/S04 - Pruebas de Caja Negra.md
+    - S05 - Dependencias: 
+      - S05.1 - Dependencias externas 1 (STUBs): PPSS/S05 - Dependencias externas 1 (STUBs).md
+      - S05.2 - Flujo de dependencias y ficheros en STUBs: PPSS/S05.1 - Flujo de dependencias y ficheros en STUBs.md
+    - S06 - Dependencias externas 2 (mocks): PPSS/S06 - Dependencias externas 2 (mocks).md
+    - S07 - Integración: PPSS/S07 - Integración.md
+    - S08 - Pruebas de aceptación 1:
+      - S08.1 - Pruebas de sistema vs aceptación: PPSS/S08 - Pruebas de sistema vs aceptación.md
+      - S08.2 - Page Object y Page Factory: PPSS/S08.1 - Page Object y Page Factory.md
+    - S09 - Pruebas de aceptación 2: PPSS/S09 - Pruebas de aceptación 2.md
+    - S10 - Análisis de pruebas: PPSS/S10 - Análisis de pruebas.md
+    - Maven:
+      - Artefactos maven: PPSS/Maven/Artefactos maven.md
+      - Fases, Goals y Plugins: PPSS/Maven/Fases, Goals y Plugins.md
+      - pom.xml: PPSS/Maven/pom.xml.md
+    - Parciales:
+      - Parcial 1: PPSS/Parcial 1.md
+      - Parcial 2: PPSS/Parcial 2.md
