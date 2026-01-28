@@ -5,6 +5,7 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - toc.follow
   palette:
     - scheme: default
       toggle:
@@ -16,6 +17,10 @@ theme:
         name: Cambiar a modo claro
 
 markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 2-6
+      title: "Contenido"
   - pymdownx.arithmatex
   - pymdownx.superfences
   - admonition
