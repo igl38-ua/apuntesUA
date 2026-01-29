@@ -24,6 +24,7 @@ ___
 ## Pruebas y comportamiento
 
 Dado un programa se consideran los conjuntos:
+
 - ==Conjunto **S**==. Comportamientos especificados para el programa que **deberían cumplir las reglas según la especificación**.
 - ==Conjunto **P**==. Conjunto de comportamientos programados. **Comportamientos reales que el programa puede manejar, según el código implementado**.
 - ==Conjunto **T**==. Comportamientos probados, conjunto de tests. Se representa en tablas con casos de prueba y resultados esperados. Un *comportamiento* se identifica por sus datos de entrada + resultado. 
@@ -44,6 +45,7 @@ ___
 	- **informe** que indica si se han obtenido los resultados esperados, si han sido exitosos o no.
 
 La ejecución de los tests con Maven en prácticas siempre sigue las siguientes fases:
+
 - **Compilar el código del programa**.
 - **Compilar el código de las pruebas**.
 - **Ejecutar las pruebas**.
@@ -53,6 +55,7 @@ ___
 ## Maven
 
 Es una herramienta para generar **build scripts**. Maven tiene 3 ciclos de vida.
+
 - Ciclo de vida por **DEFECTO** (23 fases).
 - Ciclo de vida **SITE** (4 fases).
 - Ciclo de vida **CLEAN** (3 fases). 

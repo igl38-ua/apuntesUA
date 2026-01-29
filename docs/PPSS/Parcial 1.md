@@ -1,7 +1,7 @@
-Las pruebas deben de ser un conjunto **EFECTIVO** (deben detectar el máximo número posible de errores) y **EFICIENTE** (con el menor número posible de casos de prueba). ^R1
+Las pruebas deben de ser un conjunto **EFECTIVO** (deben detectar el máximo número posible de errores) y **EFICIENTE** (con el menor número posible de casos de prueba).
 
 ___
-## Ubicaciones directorios
+## Directorios y estructura
 
 Para la clase `Cosa.java`.
 

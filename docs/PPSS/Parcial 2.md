@@ -459,6 +459,7 @@ ___
 ## Page Object
 
 El método **Page Object** se basa en delegar y separar la creación de objetos y acceso a los campos de la web, a clases que representan una página completa de la web.
+
 Este acceso se realiza mediante funciones que llaman a los selectores correspondientes.
 
 ```java
@@ -505,7 +506,8 @@ public class HomePage {
 ___
 ## Page Object + Page Factory
 
-Con el patrón Page Factory, en lugar de instanciar los objetos Page Object directamente se delega a la Page Factory usando una función `PageFactory.initElements(driver, Clase.class);` 
+Con el patrón Page Factory, en lugar de instanciar los objetos Page Object directamente se delega a la Page Factory usando una función `PageFactory.initElements(driver, Clase.class);`
+
 De esta manera se crea el objeto Page Object y se inicializan los `@FindBy` para no tener que instanciarlos con `.findElements()`. Pero es obligatorio que en la clase instanciada se defina un constructor por defecto:
 
 ```java

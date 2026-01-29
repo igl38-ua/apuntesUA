@@ -30,6 +30,7 @@ ___
 ## Grafo de Flujo de Control (CFG)
 
 Se usa un grafo dirigido.
+
 - Cada **nodo** tiene una sentencia o grupo de sentencias secuenciales y/o única condición.
 - Las **aristas** representan el flujo de ejecución entre dos conjuntos de sentencias secuenciales.
 
@@ -46,6 +47,7 @@ ___
 
 Permite ejecutar cada **camino independiente** en el programa. Garantiza el objetivo del método. 
 El **objetivo** del método:
+
 - Se ejecutan **TODAS** las sentencias del programa, al menos una vez.
 - Se garantiza que **TODAS** las condiciones se ejecutan en sus vertientes. 
 ### Caminos independientes
