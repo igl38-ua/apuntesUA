@@ -1,7 +1,5 @@
 # PPSS HUB
-# Conceptos recurrentes
 
-___
 ## [S01 - Pruebas del software](S01%20-%20Pruebas%20del%20software.md)
 Introducción a pruebas, objetivos y herramientas.
 ## [S02 - Pruebas de Caja Blanca](S02%20-%20Pruebas%20de%20Caja%20Blanca.md)
