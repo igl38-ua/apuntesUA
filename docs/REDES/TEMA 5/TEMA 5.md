@@ -1,11 +1,13 @@
 Objetivos de la capa de red. Encaminamiento. 
 # Protocolo IP. RFC 791
 Direccionamiento IP 193.145.20.23
+
 - Máscara de red.
 - Valor de 32 bits.
 - X.X.X.0 - Dirección de red.
 - X.X.X.255 - Dirección de broadcast.
 ## Tipos de redes
+
 | Clase | Tipo     | Bits                      |
 | ----- | -------- | ------------------------- |
 | A     | 0...     | Red (7) / Máquina (24)    |
@@ -13,6 +15,7 @@ Direccionamiento IP 193.145.20.23
 | C     | 110...   | Red  (21) / Máquina (8)   |
 | D     | 1110...  | Multicast (28)            |
 | E     | 11110... | Futuras ampliaciones (27) |
+
 ## Redes privadas
 - 10.0.0.0/8
 - 192.168.0.0/16
@@ -21,6 +24,7 @@ Direccionamiento IP 193.145.20.23
 ## Protocolo DHCP
 Protocolo de configuración de máquina dinámico (RFC 2131).
 Parámetros de configuración de un servidor DHCP:
+
 - Rango de direcciones IP disponibles.
 - Valor de la máscara de red. 
 - Dirección IP de la puerta de enlace por defecto. 
@@ -49,6 +53,7 @@ Encaminamiento a dos niveles:
 ## Encaminamiento entre SA (Sistemas Autónomos):
 ### [Protocolo BGP](../Protocolos/BGP.md)
 BGP - Border Gateway Protocol.
+
 - La información de encaminamiento se intercambia utilizando conexiones TCP entre routers frontera.
 - **BGP** informa sobre la alcanzabilidad y conectividad entre SA (que redes pertenecen a que sistemas autónomos).
 - **BGP** reduce la información intercambiada comunicando una sola vez las redes accesibles a través de un SA y actualiza la información que se modifica. Agrupa destinos en una sola denominación.
@@ -69,6 +74,7 @@ En encaminamiento estático en la red no es adecuado, para ello se introduce un 
 ### [Protocolo RIP](../Protocolos/RIP.md)
 RIP - Routing Information Protocol. 
 Basado en un algoritmo de vector de distancia - **Algoritmo Bellman-Ford**.
+
 - Cada router tiene una tabla con información de destinos y una métrica para alcanzarlos.
 - Cada router propaga la información de sus rutas conocidas a través de mensajes en la red, y los routers que la reciben actualizan sus tablas si encuentran rutas más cortas a un mismo destino.
 
@@ -76,10 +82,12 @@ Basado en un algoritmo de vector de distancia - **Algoritmo Bellman-Ford**.
 - Existe un número máximo de saltos para la métrica RIP, **16**. Esto permite llegar a una solución estable. 
 #### RIP v1
 Los mensajes RIP con información de las rutas de datos se envían dentro de paquetes UDP.
+
 - El envío de mensajes RIP a la dirección de broadcast hace que las máquinas que no soportan RIP procesen paquetes hasta la capa de transporte (UDP). 
 Para solventar estos problemas se introduce la versión 2 de RIP.
 #### RIP v2
-Los mensajes RIP son enviados a la dirección IP **224.0.0.9** (dirección IP de multicast). 
+Los mensajes RIP son enviados a la dirección IP **224.0.0.9** (dirección IP de multicast).
+
 - RIP permite el encaminamiento dinámico en redes de tamaño pequeño (hasta 16 saltos) con una estructura sencilla (inexistencia de muchos bucles). 
 - RIP presenta problemas de convergencia lenta ante cambios en la red y posibilidad de que se introduzcan bucles infinitos. Para evitar esto emplea estrategias como temporizadores y un número máximo de saltos.
 #### Conclusiones 

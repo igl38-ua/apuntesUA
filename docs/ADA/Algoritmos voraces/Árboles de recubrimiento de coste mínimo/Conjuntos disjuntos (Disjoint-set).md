@@ -1,6 +1,6 @@
 # Conjuntos disjuntos (ineficiente)
 
-NO VORAZ, pero necesario para Kruskal.
+> NO VORAZ, pero necesario para Kruskal.
 
 [Algoritmo de Kruskal](Algoritmo%20de%20Kruskal.md)
 
@@ -37,8 +37,9 @@ ___
 ## Quick-find
 
 Asigna una etiqueta por cada partición.
-**find** consulta la etiqueta .
-**union** vuelve a etiquetar los elementos de uno de los bloques. 
+
+- **find** consulta la etiqueta .
+- **union** vuelve a etiquetar los elementos de uno de los bloques. 
 
 ![item](../../../img/ada/quick-find.png)
 ## Complejidad

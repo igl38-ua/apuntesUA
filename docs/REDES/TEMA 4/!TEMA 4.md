@@ -1,3 +1,4 @@
+# Tema 4. Nivel de enlace
 Protocolo de nivel de enlace, comunicación virtual horizontal.
 ## Servicio sin conexión y sin reconocimiento
 - Baja tasa de error
@@ -25,6 +26,7 @@ Asegura transmisión sin errores debidos al medio físico.
 ### [Suma de verificación (Checksum)](MVT/Suma%20de%20verificación%20(Checksum).md)
 ## Control del fujo 
 Control del flujo de tramas entre emisor y receptor para evitar congestiones, reenvíos incorrectos, etc.
+
 - Controlar el envío y recepción correcto de los paquetes de nivel enlace.
 - Controlar la sincronización del emisor y el receptor.
 - Evitar congestiones en el envío de información del emisor al receptor.

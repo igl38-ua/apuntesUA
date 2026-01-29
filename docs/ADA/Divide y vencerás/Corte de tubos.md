@@ -1,3 +1,4 @@
+# Corte de tubos
 Tubos de longitud n que son cortados en trozos más pequeños para su venta, de manera que a más pequeños mayor es el precio por unidad.
 El número total de formas distintas de cortar el tubo es de $2^{n-1}$, porque entre cada trozo posible del tubo, de 1 a 2, 2 a 3... puedes elegir cortar o no cortar (0 o 1).
 # Solución por divide y vencerás

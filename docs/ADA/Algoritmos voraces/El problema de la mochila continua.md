@@ -1,4 +1,4 @@
-
+# El problema de la mochila continua
 > [!example] Datos
 > - $v_i$ son los valores del total
 > - $w_i$ son los pesos

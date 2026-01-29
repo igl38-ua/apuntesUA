@@ -1,4 +1,4 @@
-
+# El problema de la mochila (general)
 > [!note] datos
 > n objetos
 > v valores

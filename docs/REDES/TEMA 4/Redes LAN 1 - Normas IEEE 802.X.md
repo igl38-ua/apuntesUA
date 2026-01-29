@@ -58,17 +58,19 @@ Un cable UTP comercial está formado por 4 pares de hilos trenzados. Topología 
 #### Puentes y puentes transparentes
 La interconexión Ethernet se puede mejorar empleando **puentes** o **bridges**. Un puente lee *todos* los paquetes recibidos por un puerto.
 Los puentes filtran el tráfico de red inspeccionando las direcciones MAC de origen y destino de las tramas.
+
 - Si una trama está destinada a una MAC en el mismo segmento de donde proviene el puente la descarta (no la reenvía). 
 - Si está destinada a un segmento diferente la reenvía al segmento correspondiente. 
 
 Los **puentes transparentes** deciden como los paquetes se intercambian entre segmentos, ya que los equipos no conocen la estructura de la red.
 Son puentes que operan de manera invisible a los dispositivos de la red. No requiere de configuración manual de direcciones MAC y las aprende automáticamente.
+
 - Cuando recibe una trama mira la dirección MAC origen y la almacena en su tabla de direcciones asociada al puerto de entrada.
 - Revisa la MAC destino. Si conoce el puerto de destino reenvía solo por ese puerto. Si no, realiza un flooding, enviando a todos excepto por el que llegó la trama.
-En un switch típico una dirección MAC está asociada a un único puerto. Direcciones MAC origen.
 
+En un switch típico una dirección MAC está asociada a un único puerto. Direcciones MAC origen.
 Los puentes filtran tramas innecesarias, reduciendo el tráfico en cada segmento de la red. 
-##### Algoritmo Spanning Tree
+#### Algoritmo Spanning Tree
 Algoritmo de árbol de expansión.
 Define un protocolo de comunicación entre puentes que consigue una estructura de LANs interconectadas por puentes **sin bucles**. Se encuentra en la norma IEEE 802.1D MAC Bridge. 
 
@@ -77,7 +79,8 @@ Define un protocolo de comunicación entre puentes que consigue una estructura d
 - En cada segmento se elige un **puerto designado**, que es el puerto con menor valor RPC que esté conectado al puerto designado. 
 - Se activan todos los **puertos raíz** y **designados** de la red, determinando la estructura de árbol.
 #### Ethernet conmutada
-Los conmutadores o switches son los puentes multipuerto. 
+Los conmutadores o switches son los puentes multipuerto.
+
 - Modo **full-duplex**: No hay colisiones. Transmisión y recepción simultánea. 
 - Modo **half-duplex**: Permite la conexión con CSMA/CD (concentrador 10BaseT). 
 #### Fast Ethernet (IEEE 802.3u)

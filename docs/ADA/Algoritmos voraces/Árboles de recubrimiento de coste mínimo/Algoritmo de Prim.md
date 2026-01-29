@@ -1,3 +1,4 @@
+# Algoritmo de Prim
 > Hacer crecer el árbol
 
 - Comienza con un único nodo arbitrario y expande ese árbol agregando la arista de menor peso que conecta un nodo dentro del árbol a un nodo fuera del árbol.

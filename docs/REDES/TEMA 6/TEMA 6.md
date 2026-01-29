@@ -1,5 +1,6 @@
 # Protocolo UDP
 UDP - User Datagram Protocol.
+
 - **No orientado a conexión**. 
 - Trabaja con datagramas/paquetes enteros, no con bytes individuales como TCP.
 - No es fiable. 
@@ -12,6 +13,7 @@ UDP - User Datagram Protocol.
 - SVT.
 # Protocolo TCP
 TCP - Transmission Control Protocol.
+
 - Trabaja con **flujo de bytes**. Entrega y recibe **bytes** **individuales**. TCP los agrupa en paquetes de tamaño adecuado para mejorar el rendimiento y evitar la fragmentación a nivel IP. 
 - **Orientado a conexión**. 
 - Es fiable. 
@@ -39,6 +41,7 @@ En la conexión, si se da el caso de que los paquetes tiene que atravesar una re
 ## Control del flujo
 Se emplea un algoritmo de ventana deslizante $W_e = 7$, $W_r = 7$.
 El control del flujo se realiza variando la ventana del receptor (campo window en la cabecera TCP).
+
 - Si la ventana del receptor aumenta, el emisor puede enviar más información sin esperar a recibir ACKs.
 - Si la ventana del receptor disminuye, el emisor envía menos información sin esperar a recibir ACKs. 
   
@@ -48,6 +51,7 @@ Para evitar reenvíos inútiles se espera al ACK del reenvío antes de reenviar 
 Se define en el emisor una nueva ventana llamada ventana de congestión, un valor en bytes igual que la ventana del emisor. 
 La ventana del emisor se calcula como el valor mínimo de la ventana de congestión y la ventana que informa el receptor.
 TCP supone que la expiración del timeout de un segmento es debido a la congestión, actualiza los valores:
+
 - Reduce el tamaño de la ventana de congestión a la mitad.
 - Multiplica x2 el timeout de los paquetes en la ventana del emisor.
 De manera que conforme expiran temporizadores, el emisor envía cada vez menos datos.

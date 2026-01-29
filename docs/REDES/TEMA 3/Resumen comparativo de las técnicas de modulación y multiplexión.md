@@ -1,4 +1,4 @@
-Análisis detallado de las **características** de las técnicas de multiplexado (FDM, WDM, TDM) y las técnicas de modulación (ASK, PSK, FSK, QPSK y QAM) en términos de **rendimiento**, **velocidad**, y **coste**:
+Análisis de las **características** de las técnicas de multiplexado (FDM, WDM, TDM) y las técnicas de modulación (ASK, PSK, FSK, QPSK y QAM) en términos de **rendimiento**, **velocidad**, y **coste**:
 ___
 ## Técnicas de Multiplexado
 ### 1. Multiplexación por División de Frecuencia (FDM):

@@ -1,3 +1,4 @@
+# Algoritmo de Kruskal
 > Añadir aristas evitando ciclos
 
 Kruskal va construyendo un bosque de árboles que va uniendo hasta que acaba con un árbol de recubrimiento de coste mínimo.
@@ -38,5 +39,6 @@ ___
 
 Para el peor caso el número de arcos de un grafo es $E \in O(V^2)$.
 Cuando el grafo está completamente lleno la complejidad del de **Kruskal** es peor que la de **Prim**, $O(V^2·\log V)$ frente a $O(V^2)$.
+
 **Kruskal** es mejor cuando el grafo es muy disperso. Cuando al representarlo con la matriz de adyacencia hay muchos huecos. 
 **Prim** es mejor cuando el grafo es completo (lleno).

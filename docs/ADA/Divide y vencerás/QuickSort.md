@@ -1,3 +1,4 @@
+# QuickSort
  Algoritmo de ordenación por partición.
 
 - Se selecciona un **elemento pivote** central que divide el vector dos.

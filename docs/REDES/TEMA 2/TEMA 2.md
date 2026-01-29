@@ -1,6 +1,7 @@
 # 2. Arquitectura de red
 ## 2.1 Modelo de capas
 Definiciones:
+
 - **Capa o nivel**: niveles de abstracción de la comunicación.
 - **Entidades pares**: instancias de una capa en cada extremo.
 - **Protocolo**: normas para la comunicación entre entidades pares.
@@ -31,13 +32,11 @@ La fragmentación ocurre cuando una SDU no cabe dentro de una PDU del mismo nive
 Nivel **N**:
 
 - **SDU**: Datos recibidos del nivel n+1 (nivel superior).
-
 - **PDU**: Datos encapsulados con encabezados e información del nivel n.
 
 Nivel **N-1**:
 
 - **SDU**: La PDU del nivel n se convierte en la SDU del nivel n-1.
-
 - **PDU**: Datos encapsulados con encabezados e información del nivel n-1.
 
 ### Capa de aplicación
@@ -59,17 +58,11 @@ Identificación de equipos en una red.
 **Direccionamiento IP**:
 
 - Identificadores de 32 bits (x.x.x.x -> 0-255.0-255.0-255.0-255).
-
 - Máscara de red (255.255.255.0)
-
 - Subredes según una máscara de red (192.169.17.X):
-
 	- 192.169.17.0 -> Dirección de red (no utilizable)
-
 	- 192.169.17.1
-
 	- 192.169.17.2
-
 	- 192.169.17.255 -> Dirección de broadcast (no utilizable)
 	
 ### Capa de enlace 

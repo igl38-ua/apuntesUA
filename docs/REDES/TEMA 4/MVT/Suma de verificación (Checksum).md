@@ -1,8 +1,8 @@
 # Suma de verificación (Checksum)
-La suma de verificación es un método simple pero efectivo para detectar errores en los datos transmitidos. Consiste en **sumar los valores de los bytes de datos en el emisor**, a menudo utilizando aritmética de **complemento a uno**, y luego enviar el resultado junto con los datos. El receptor realiza la misma suma en los datos recibidos, incluyendo el valor de suma de verificación transmitido, y si el resultado es un valor específico (por ejemplo, 0xFF), los datos se consideran correctos. Si el resultado es diferente, se asume que los datos están corruptos.
-## ¿Qué es la suma de verificación?
+Consiste en **sumar los valores de los bytes de datos en el emisor**, a menudo utilizando aritmética de **complemento a uno**, y luego enviar el resultado junto con los datos. 
 
-La suma de verificación es un valor numérico calculado a partir de un bloque de datos antes de su envío. Este valor representa una especie de "resumen" de los datos originales. Al recibir los datos, el receptor recalcula la suma de verificación y la compara con la recibida. Si ambas coinciden, se asume que los datos no han sufrido alteraciones durante la transmisión; si difieren, se detecta que ha ocurrido un error.
+El receptor realiza la misma suma en los datos recibidos, incluyendo el valor de suma de verificación transmitido, y si el resultado es un valor específico (por ejemplo, 0xFF), los datos se consideran correctos. Si el resultado es diferente, se asume que los datos están corruptos.
+
 ## ¿Cómo funciona el mecanismo de suma de verificación?
 
 1. **Cálculo en el emisor:**

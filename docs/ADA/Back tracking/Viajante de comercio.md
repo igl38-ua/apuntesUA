@@ -1,3 +1,4 @@
+# Viajante de comercio
 Dado un Grafo ponderado $g = (V, E)$ con pesos no negativos hay que encontrar un ciclo hamiltoniano de coste mínimo. 
 
 ![item](../../img/ada/viajante-de-comercio.png)
@@ -7,9 +8,9 @@ La función **round** calcula la longitud de un camino, dado un grafo y el vecto
 ___
 ## Función solve
 
-**k** es la ciudad por la cual se rellena
-**x** es la solución parcial. 
-**shortest** longitud del camino más corto hasta el momento.
+- **k** es la ciudad por la cual se rellena
+- **x** es la solución parcial. 
+- **shortest** longitud del camino más corto hasta el momento.
 
 Guarda el mínimo entre el shortest actual y el nuevo calculado.
 Hace las permutaciones pertinentes con el swap para probar el resto de ciudades.

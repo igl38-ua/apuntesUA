@@ -55,6 +55,7 @@ Clave PSK de al menos 20 caracteres.
 #### WPA-Enterprise
 Emplea un servidor de autenticación. 
 La base de su funcionamiento es el protocolo de autenticación **EAP** (Extensible Authentication Protocol). Tres mecanismos de autenticación:
+
 - **EAP/TLS**: certificado servidor-cliente. 
 - **EAP/TTLS o PEAP**: certificado de servidor RADIUS.
 - **LEAP**: Lightweight EAP. Mecanismo CHAP del servidor RADIUS.

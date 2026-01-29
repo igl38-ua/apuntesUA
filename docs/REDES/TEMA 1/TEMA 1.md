@@ -1,8 +1,8 @@
 # 1.Tipos de redes
 ## Redes LAN
-Redes de difusión.
-De área local (piso o edificio).
+Redes de difusión. De área local (piso o edificio).
 Características:
+
 - Baja tasa de error en el medio físico.
 - Alta velocidad de transferencia (10 Mbps - 10 Gbps).
 - Coste bajo
@@ -18,12 +18,14 @@ Según la forma  en que se establece la comunicación:
 Camino fijo y dedicado en un canal físico utilizando conmutadores (switches). Como la RTC en telefonía.
 ### Redes de conmutación de paquetes
 Información fragmentada en paquetes. Cabeceras para el direccionamiento y reconocimiento de paquetes.
-#### - Circuitos virtuales
+#### Circuitos virtuales
 Analogía de la conmutación de circuitos. Camino fijo virtual común a todos los paquetes. Más retardos.
+
 - Intercambio fiable de datos.
 - Control de los recursos disponibles para la comunicación.
-#### - Datagramas
+#### Datagramas
 Los paquetes tienen información del destino pero no del camino que tienen que seguir. Es posible que los paquetes lleguen a su destino desordenados o que no lleguen, con lo que no es un método muy fiable. (Caso de Red X.25 en España).
+
 Tolerancia a fallos y comunicación no fiable.
 La decisión de salto para cada paquete se realiza en cada nodo.
 
