@@ -1,14 +1,11 @@
-/* Cambiar el estilo de la negrita */
-/* En Material, asegúrate de que la negrita no cambie el color */
-.md-typeset strong,
-.md-typeset b,
-strong,
-b {
+/* --- TUS ESTILOS EXISTENTES (SIN CAMBIOS) --- */
+.md-typeset strong, .md-typeset b, strong, b {
     color: currentColor;
     font-weight: 700;
 }
 
-/* Colores de encabezados por esquema para mantener contraste */
+
+
 [data-md-color-scheme="default"] {
     --ada-h1: #1b1f2a;
     --ada-h2: #365a9b;
@@ -27,32 +24,80 @@ b {
     --ada-h6: #f2b07b;
 }
 
-/* Estilo para los encabezados de nivel 1 */
-h1 {
-    color: var(--ada-h1);
+h1 { color: var(--ada-h1); }
+h2 { color: var(--ada-h2); }
+h3 { color: var(--ada-h3); }
+h4 { color: var(--ada-h4); }
+h5 { color: var(--ada-h5); }
+h6 { color: var(--ada-h6); }
+
+/* --- BLOQUE HERO --- */
+.hero {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
 }
 
-/* Estilo para los encabezados de nivel 2 */
-h2 {
-    color: var(--ada-h2);
+.hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Estilo para los encabezados de nivel 3 */
-h3 {
-    color: var(--ada-h3);
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    text-align: center;
+    z-index: 1;
 }
 
-/* Estilo para los encabezados de nivel 4 */
-h4 {
-    color: var(--ada-h4);
+/* --- SOLUCIÓN DE TRANSPARENCIA PARA BANNER, HEADER Y TABS --- */
+
+/* --- TRANSPARENCIA SOLO EN EL INDEX --- */
+
+/* Usamos :has() para detectar si el bloque .hero existe en la página */
+/* Esto garantiza que si no hay .hero, no haya transparencia */
+body:has(.hero) .md-header, 
+body:has(.hero) .md-tabs, 
+body:has(.hero) .md-container {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
 }
 
-/* Estilo para los encabezados de nivel 5 */
-h5 {
-    color: var(--ada-h5);
+body:has(.hero) .md-banner, 
+body:has(.hero) .md-announce,
+body:has(.hero) .md-banner__inner,
+body:has(.hero) .md-announce__inner {
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
-/* Estilo para los encabezados de nivel 6 */
-h6 {
-    color: var(--ada-h6);
+/* Colores blancos solo cuando el hero está presente */
+body:has(.hero) .md-header__title,
+body:has(.hero) .md-header__button,
+body:has(.hero) .md-tabs__link,
+body:has(.hero) .md-announce__inner,
+body:has(.hero) .md-announce__inner * {
+    color: white !important;
+}
+
+/* 4. Efecto sutil para las pestañas no seleccionadas */
+.md-tabs__link {
+    opacity: 0.7;
+}
+
+.md-tabs__link--active {
+    opacity: 1;
 }

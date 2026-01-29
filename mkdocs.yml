@@ -3,6 +3,9 @@ site_url: https://igl38-ua.github.io/apuntesUA
 # repo_url: "https://github.com/igl38-ua/apuntesUA"
 theme:
   name: material
+  font:
+    text: Noto Sans
+    code: Noto Sans Mono
   features:
     - navigation.tabs
     - toc.follow
@@ -38,6 +41,10 @@ extra_javascript:
 #   social:
 #     - icon: fontawesome/brands/github
 #       link: https://github.com/igl38-ua/apuntesUA
+extra:
+  analytics:
+    announce: "¡Bienvenidos a la nueva documentación!"
+
 copyright: © 2025 Iván Guijarro — CC BY-NC-SA 4.0
 
 extra_css:
@@ -45,6 +52,7 @@ extra_css:
 
 nav:
   - Inicio: index.md
+  - Apuntes UA: apuntesUA.md
   - ADA:
     - ADA HUB: ADA/ADA HUB.md
     - Conceptos clave: ADA/Conceptos clave.md
