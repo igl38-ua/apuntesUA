@@ -1,6 +1,6 @@
 site_name: Apuntes UA
 site_url: https://igl38-ua.github.io/apuntesUA
-repo_url: "https://github.com/igl38-ua/apuntesUA"
+# repo_url: "https://github.com/igl38-ua/apuntesUA"
 theme:
   name: material
   features:
@@ -34,11 +34,11 @@ hooks:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/igl38-ua/apuntesUA
-  copyright: "© 2025 igl38-ua. Todos los derechos reservados."
+# extra:
+#   social:
+#     - icon: fontawesome/brands/github
+#       link: https://github.com/igl38-ua/apuntesUA
+#   copyright: "© 2025 igl38-ua. Todos los derechos reservados."
 
 extra_css:
   - assets/styles.css
