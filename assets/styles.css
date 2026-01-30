@@ -1,0 +1,101 @@
+/* --- TUS ESTILOS EXISTENTES (SIN CAMBIOS) --- */
+.md-typeset strong, .md-typeset b, strong, b {
+    color: currentColor;
+    font-weight: 700;
+}
+
+[data-md-color-scheme="default"] {
+    --ada-h1: #1b1f2a;
+    --ada-h2: #365a9b;
+    --ada-h3: #6b49c8;
+    --ada-h4: #9c8b1d;
+    --ada-h5: #7c2a8a;
+    --ada-h6: #a55b2f;
+}
+
+[data-md-color-scheme="slate"] {
+    --ada-h1: #ffffff;
+    --ada-h2: #7aa3ff;
+    --ada-h3: #c2a5ff;
+    --ada-h4: #f7f29a;
+    --ada-h5: #e39bf2;
+    --ada-h6: #f2b07b;
+}
+
+h1 { color: var(--ada-h1); }
+h2 { color: var(--ada-h2); }
+h3 { color: var(--ada-h3); }
+h4 { color: var(--ada-h4); }
+h5 { color: var(--ada-h5); }
+h6 { color: var(--ada-h6); }
+
+/* --- BLOQUE HERO --- */
+.hero {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+/* --- SOLUCIÓN DE TRANSPARENCIA PARA BANNER, HEADER Y TABS --- */
+
+/* --- TRANSPARENCIA SOLO EN EL INDEX --- */
+
+/* Usamos :has() para detectar si el bloque .hero existe en la página */
+/* Esto garantiza que si no hay .hero, no haya transparencia */
+body:has(.hero) .md-header, 
+body:has(.hero) .md-tabs, 
+body:has(.hero) .md-container {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+}
+
+body:has(.hero) .md-banner, 
+body:has(.hero) .md-announce,
+body:has(.hero) .md-banner__inner,
+body:has(.hero) .md-announce__inner {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Colores blancos solo cuando el hero está presente */
+body:has(.hero) .md-header__title,
+body:has(.hero) .md-header__button,
+body:has(.hero) .md-tabs__link,
+body:has(.hero) .md-announce__inner,
+body:has(.hero) .md-announce__inner * {
+    color: white !important;
+}
+
+/* 4. Efecto sutil para las pestañas no seleccionadas */
+.md-tabs__link {
+    opacity: 0.7;
+}
+
+.md-tabs__link--active {
+    opacity: 1;
+}

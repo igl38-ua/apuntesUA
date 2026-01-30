@@ -1,0 +1,4427 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://igl38-ua.github.io/apuntesUA/PPSS/S06%20-%20Dependencias%20externas%202%20%28mocks%29/">
+      
+      
+        <link rel="prev" href="../S05.1%20-%20Flujo%20de%20dependencias%20y%20ficheros%20en%20STUBs/">
+      
+      
+        <link rel="next" href="../S07%20-%20Integraci%C3%B3n/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>S06 - Dependencias externas 2 (mocks) - Apuntes UA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CNoto+Sans+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Noto Sans Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#verificacion-y-pruebas-unitarias" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Apuntes UA" class="md-header__button md-logo" aria-label="Apuntes UA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes UA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              S06 - Dependencias externas 2 (mocks)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../apuntesUA/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Apuntes UA
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ADA/ADA%20HUB/" class="md-tabs__link">
+          
+  
+  
+  ADA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../REDES/REDES%20HUB/" class="md-tabs__link">
+          
+  
+  
+  REDES
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../PPSS%20HUB/" class="md-tabs__link">
+          
+  
+  
+  PPSS
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Apuntes UA" class="md-nav__button md-logo" aria-label="Apuntes UA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Apuntes UA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apuntesUA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apuntes UA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ADA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/ADA%20HUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADA HUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Conceptos%20clave/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conceptos clave
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/C%C3%A1lculo%20de%20complejidades%20b%C3%A1sicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cálculo de complejidades básicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Complejidad%20y%20notaci%C3%B3n%20asint%C3%B3tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complejidad y notación asintótica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Ecuaciones%20de%20recurrencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecuaciones de recurrencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Cotas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cotas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Tipos%20del%20Problema%20de%20la%20mochila/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipos del Problema de la mochila
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divide y vencerás
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Divide y vencerás
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Divide%20y%20vencer%C3%A1s/Divide%20y%20vencer%C3%A1s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divide y vencerás
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Divide%20y%20vencer%C3%A1s/QuickSort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QuickSort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Divide%20y%20vencer%C3%A1s/MergeSort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MergeSort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Divide%20y%20vencer%C3%A1s/HeapSort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HeapSort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Divide%20y%20vencer%C3%A1s/Torres%20de%20Hanoi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Torres de Hanoi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Divide%20y%20vencer%C3%A1s/Corte%20de%20tubos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Corte de tubos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación dinámica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programación dinámica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Programaci%C3%B3n%20din%C3%A1mica/Programaci%C3%B3n%20din%C3%A1mica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación dinámica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Programaci%C3%B3n%20din%C3%A1mica/Programaci%C3%B3n%20din%C3%A1mica%20iterativa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programación dinámica iterativa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Programaci%C3%B3n%20din%C3%A1mica/Coeficiente%20binomial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coeficiente binomial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Programaci%C3%B3n%20din%C3%A1mica/El%20problema%20de%20la%20mochila%20%28knapsack%20problem%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El problema de la mochila (knapsack problem)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algoritmos voraces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Algoritmos voraces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Algoritmos%20voraces/Algoritmos%20voraces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algoritmos voraces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Algoritmos%20voraces/El%20problema%20de%20la%20mochila%20continua/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El problema de la mochila continua
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Algoritmos%20voraces/El%20problema%20de%20la%20mochila%20discreta%20%28sin%20fraccionamiento%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El problema de la mochila discreta (sin fraccionamiento)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Algoritmos%20voraces/El%20problema%20del%20cambio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El problema del cambio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10_5" id="__nav_3_10_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Árboles de recubrimiento de coste mínimo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_10_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Árboles de recubrimiento de coste mínimo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Algoritmos%20voraces/%C3%81rboles%20de%20recubrimiento%20de%20coste%20m%C3%ADnimo/%C3%81rboles%20de%20recubrimiento%20de%20coste%20m%C3%ADnimo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Árboles de recubrimiento de coste mínimo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Algoritmos%20voraces/%C3%81rboles%20de%20recubrimiento%20de%20coste%20m%C3%ADnimo/Algoritmo%20de%20Prim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algoritmo de Prim
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Algoritmos%20voraces/%C3%81rboles%20de%20recubrimiento%20de%20coste%20m%C3%ADnimo/Algoritmo%20de%20Kruskal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algoritmo de Kruskal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Algoritmos%20voraces/%C3%81rboles%20de%20recubrimiento%20de%20coste%20m%C3%ADnimo/Conjuntos%20disjuntos%20%28Disjoint-set%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conjuntos disjuntos (Disjoint-set)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back tracking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Back tracking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Back%20tracking/Back%20tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Back%20tracking/El%20problema%20de%20la%20mochila%20%28general%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El problema de la mochila (general)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Back%20tracking/El%20problema%20de%20las%20n%20reinas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    El problema de las n reinas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Back%20tracking/Permutaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permutaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Back%20tracking/Viajante%20de%20comercio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viajante de comercio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ramificación y poda
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ramificación y poda
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADA/Ramificaci%C3%B3n%20y%20poda/Ramificaci%C3%B3n%20y%20poda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ramificación y poda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDES
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REDES
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/REDES%20HUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REDES HUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%201/TEMA%201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%202/TEMA%202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Arquitectura de red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Nivel físico
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Nivel físico
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%203/%21TEMA%203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%203/Modulaciones%20y%20usos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modulaciones y usos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%203/Multiplexi%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplexión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%203/Medios%20de%20transmisi%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medios de transmisión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%203/Resumen%20comparativo%20de%20las%20t%C3%A9cnicas%20de%20modulaci%C3%B3n%20y%20multiplexi%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resumen comparativo de las técnicas de modulación y multiplexión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 4. Nivel de enlace
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 4. Nivel de enlace
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/%21TEMA%204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mecanismos de verificación de tramas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mecanismos de verificación de tramas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/MVT/%21MVT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SVT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/MVT/FCS%20%28Frame%20Check%20Sequence%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FCS (Frame Check Sequence)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/MVT/Paridad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paridad
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/MVT/CRC%20%28Cyclic%20Redundancy%20Check%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CRC (Cyclic Redundancy Check)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/MVT/Suma%20de%20verificaci%C3%B3n%20%28Checksum%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Suma de verificación (Checksum)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/Protocolos%20de%20parada%20y%20espera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolos de parada y espera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/Protocolos%20de%20ventana%20deslizante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolos de ventana deslizante
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/Redes%20LAN%201%20-%20Normas%20IEEE%20802.X/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redes LAN 1 - Normas IEEE 802.X
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/Redes%20LAN%201.1%20-%20IEEE%20802.11x%20LAN%20Inal%C3%A1mbricas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redes LAN 1.1 - IEEE 802.11x LAN Inalámbricas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%205/TEMA%205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 5. Nivel de red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%206/TEMA%206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 6. Nivel de transporte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%207/TEMA%207/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 7. Acceso a servicios de internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/Cabeceras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabeceras protocolos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protocolos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Protocolos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/Protocolos/RIP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/Protocolos/OSPF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSPF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/Protocolos/BGP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BGP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/Formulario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/Esquema%20de%20contenido/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esquema de contenido
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../REDES/TEMA%204/Est%C3%A1ndares%20de%20redes%20LAN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estándares de redes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PPSS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PPSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PPSS%20HUB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PPSS HUB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S01%20-%20Pruebas%20del%20software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S01 - Pruebas del software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S02%20-%20Pruebas%20de%20Caja%20Blanca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S02 - Pruebas de Caja Blanca
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S03%20-%20Drivers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S03 - Drivers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S04%20-%20Pruebas%20de%20Caja%20Negra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S04 - Pruebas de Caja Negra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S05 - Dependencias
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    S05 - Dependencias
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S05%20-%20Dependencias%20externas%201%20%28STUBs%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S05.1 - Dependencias externas 1 (STUBs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S05.1%20-%20Flujo%20de%20dependencias%20y%20ficheros%20en%20STUBs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S05.2 - Flujo de dependencias y ficheros en STUBs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S06 - Dependencias externas 2 (mocks)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S06 - Dependencias externas 2 (mocks)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenido">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenido
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verificacion-y-pruebas-unitarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificación y pruebas unitarias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-para-automatizar-las-pruebas-unitarias-recordatorio-s05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proceso para automatizar las pruebas unitarias (recordatorio S05)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frameworks-para-implementar-dobles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frameworks para implementar dobles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easymock-implementacion-de-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EasyMock: Implementación de STUBS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EasyMock: Implementación de STUBS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-programacion-de-expectativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de programación de expectativas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-driver-con-stubs-y-easymock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos: Driver con STUBS y EasyMock
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-stub-vs-objetos-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetos STUB vs Objetos MOCK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos STUB vs Objetos MOCK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STUB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOCK
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easymock-y-tipos-de-dobles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EasyMock y tipos de dobles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easymock-implementacion-de-mocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EasyMock: Implementación de MOCKS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EasyMock: Implementación de MOCKS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-programacion-de-expectativas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de programación de expectativas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo de programación de expectativas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numero-de-invocaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Número de invocaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-de-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores de parámetros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orden-de-invocacion-de-expectativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orden de invocación de expectativas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-uso-de-mocks-con-easymock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de uso de mocks con EasyMock
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diferencia-easymockstubs-y-easymockmocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diferencia EasyMock:STUBS y EasyMock:MOCKS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partial-mocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partial Mocking
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S07%20-%20Integraci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S07 - Integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S08 - Pruebas de aceptación 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    S08 - Pruebas de aceptación 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S08%20-%20Pruebas%20de%20sistema%20vs%20aceptaci%C3%B3n/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S08.1 - Pruebas de sistema vs aceptación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S08.1%20-%20Page%20Object%20y%20Page%20Factory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S08.2 - Page Object y Page Factory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S09%20-%20Pruebas%20de%20aceptaci%C3%B3n%202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S09 - Pruebas de aceptación 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S10%20-%20An%C3%A1lisis%20de%20pruebas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S10 - Análisis de pruebas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_12" id="__nav_5_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maven
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maven
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Maven/Artefactos%20maven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Artefactos maven
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Maven/Fases%2C%20Goals%20y%20Plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fases, Goals y Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Maven/pom.xml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pom.xml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_13" id="__nav_5_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parciales
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parciales
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Parcial%201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parcial 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Parcial%202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parcial 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contenido">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contenido
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verificacion-y-pruebas-unitarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificación y pruebas unitarias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-para-automatizar-las-pruebas-unitarias-recordatorio-s05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proceso para automatizar las pruebas unitarias (recordatorio S05)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frameworks-para-implementar-dobles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frameworks para implementar dobles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easymock-implementacion-de-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EasyMock: Implementación de STUBS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EasyMock: Implementación de STUBS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-programacion-de-expectativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de programación de expectativas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-driver-con-stubs-y-easymock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos: Driver con STUBS y EasyMock
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-stub-vs-objetos-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetos STUB vs Objetos MOCK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objetos STUB vs Objetos MOCK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STUB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MOCK
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easymock-y-tipos-de-dobles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EasyMock y tipos de dobles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easymock-implementacion-de-mocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EasyMock: Implementación de MOCKS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EasyMock: Implementación de MOCKS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-programacion-de-expectativas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de programación de expectativas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo de programación de expectativas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numero-de-invocaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Número de invocaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-de-parametros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores de parámetros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orden-de-invocacion-de-expectativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orden de invocación de expectativas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-uso-de-mocks-con-easymock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de uso de mocks con EasyMock
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diferencia-easymockstubs-y-easymockmocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diferencia EasyMock:STUBS y EasyMock:MOCKS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partial-mocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partial Mocking
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="resumen">Resumen<a class="headerlink" href="#resumen" title="Permanent link">&para;</a></h1>
+<ul>
+<li>En la <strong>verificación basada en el estado (STUB)</strong> se comprueba el estado resultante de la SUT, en la <strong>verificación basada en el comportamiento (MOCKS)</strong> se comprueba la interacción con las dependencias externas. </li>
+<li>Hay <strong>cuatro pasos</strong> para automatizar las pruebas:<ul>
+<li><strong>Identificar</strong> las dependencias externas.</li>
+<li>Asegurarse de la que SUT es <strong>testable</strong>.</li>
+<li><strong>Implementar</strong> el doble (<strong>MOCK</strong>).</li>
+<li><strong>Implementar</strong> el <strong>driver</strong>. </li>
+</ul>
+</li>
+<li>El framework <strong>EasyMock</strong> permite <strong>crear automáticamente objetos</strong> de las clases que contienen a nuestros dobles.</li>
+<li>Con <strong>EasyMock</strong> se pueden implementar tanto <strong>STUBS</strong> como <strong>MOCKS</strong> cada uno con criterios diferenciados.</li>
+<li>Los métodos principales son:<ul>
+<li><code>expect(...)</code> para las <strong>expectativas</strong>.</li>
+<li><code>andStubReturn(...)</code> si devuelve <strong>valor</strong>, o <code>expectedLastCall(...)</code> si es <strong>void</strong>.</li>
+<li><code>replay(...)</code> para <strong>activar</strong> el doble.</li>
+<li><code>verify(...)</code> para <strong>verificar que la SUT invoca los mocks</strong>.</li>
+<li><code>andReturn(...).times(...)</code> times opcional, o <code>andThrow(...)</code> para excepciones.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="dependencias-externas">Dependencias externas<a class="headerlink" href="#dependencias-externas" title="Permanent link">&para;</a></h1>
+<h2 id="verificacion-y-pruebas-unitarias">Verificación y pruebas unitarias<a class="headerlink" href="#verificacion-y-pruebas-unitarias" title="Permanent link">&para;</a></h2>
+<p>Dos enfoques de verificación en las pruebas unitarias. </p>
+<ol>
+<li><strong>Basada en el estado</strong>. Se comprueba el estado resultante del SUT.</li>
+<li><strong>Basada en el comportamiento</strong>. Se comprueba la interacción con las dependencias externas (como y cuantas veces se llaman).</li>
+</ol>
+<p>En ambos casos el objetivo es detectar defectos durante las pruebas unitarias.</p>
+<hr />
+<h2 id="proceso-para-automatizar-las-pruebas-unitarias-recordatorio-s05">Proceso para automatizar las pruebas unitarias (recordatorio S05)<a class="headerlink" href="#proceso-para-automatizar-las-pruebas-unitarias-recordatorio-s05" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Identificar</strong> dependencias externas.</li>
+<li>Asegurarse de que la SUT es <strong>testable</strong>.</li>
+<li>Proporcionar <strong>dobles</strong> (stubs o <strong>mocks</strong>) para reemplazar las dependencias. Mocks en esta sesión.</li>
+<li>Implementar los <strong>drivers</strong> y definir el tipo de verificación (estado o comportamiento).</li>
+</ol>
+<hr />
+<h2 id="frameworks-para-implementar-dobles">Frameworks para implementar dobles<a class="headerlink" href="#frameworks-para-implementar-dobles" title="Permanent link">&para;</a></h2>
+<p>Para el desarrollo de los dobles (<strong>mocks</strong>) lo mejor es utilizar frameworks dedicados. <br />
+Los frameworks generan un implementación configurable trabajando "<strong>sobre la marcha</strong>", generando el bytecode necesario.  </p>
+<ul>
+<li>Facilitan la creación de dobles de forma <strong>dinámica</strong>. </li>
+<li>Permiten <strong>configurar las expectativas sobre los métodos invocados</strong>. </li>
+</ul>
+<hr />
+<h1 id="easymock">EasyMock<a class="headerlink" href="#easymock" title="Permanent link">&para;</a></h1>
+<p>EasyMock crea de forma <strong>automática</strong> un <strong>objeto</strong> de la clase que contiene nuestro doble.</p>
+<div class="highlight"><pre><span></span><code><span class="n">EasyMock</span><span class="p">.</span><span class="na">niceMock</span><span class="p">(</span><span class="n">Clase</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span>
+<span class="c1">// devuelve un OBJETO que extiende/implementa la clase/interfaz &quot;Clase.class&quot;</span>
+</code></pre></div>
+<p>El OBJETO tiene las siguientes características: </p>
+<ul>
+<li>El <strong>orden</strong> en que se realizan las invocaciones de los métodos <strong>NO</strong> se <strong>chequea</strong>.</li>
+<li>Por defecto se permiten las invocaciones a <strong>TODOS</strong> los métodos del OBJETO. <strong>Si no hemos programado las expectativas del algún método</strong> se devuelven los valores correspondientes por defecto: <strong>0, null, o false (tipo primitivo, objeto o bool)</strong>.</li>
+<li>Todas las <strong>invocaciones esperadas</strong> a métodos del doble se tienen que hacer con los <strong>argumentos que se especifican</strong>.</li>
+</ul>
+<blockquote>
+<p>Una vez se crea el doble, hay que programar sus expectativas para que controle las entradas indirectas a la SUT (STUB). Si no las controla se devuelven los valores por defecto que define EasyMock. </p>
+</blockquote>
+<hr />
+<h2 id="easymock-implementacion-de-stubs">EasyMock: Implementación de STUBS<a class="headerlink" href="#easymock-implementacion-de-stubs" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Creamos el <strong>doble</strong> con <code>niceMock(Clase.class)</code>. (<strong>El objeto que contiene el STUB</strong>).</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.easymock.EasyMock</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="n">Dependencia1</span><span class="w"> </span><span class="n">dep1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EasyMock</span><span class="p">.</span><span class="na">niceMock</span><span class="p">(</span><span class="n">Dependencia1</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"> </span>
+<span class="c1">// Dependencia1.class es la clase que contiene la dependencia externa</span>
+
+<span class="c1">//dep1 no chequea el orden de invocaciones</span>
+<span class="c1">//se permiten invocaciones no programadas, en ese caso se</span>
+<span class="c1">//devolverán los valores por defecto 0, null o falso</span>
+</code></pre></div>
+<ol>
+<li><strong>Programamos las expectativas</strong> con <code>EasyMock.expect(...).andStubReturn(...)</code> o <code>.andStubThrow(...)</code> para excepciones.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1">//metodo1() devolverá 9 si es invocado por nuestro SUT</span>
+<span class="c1">//independientemente de cuándo o cuántas veces sea invocado</span>
+
+<span class="c1">//y con qué valores de parámetros sea invocado</span>
+<span class="n">EasyMock</span><span class="p">.</span><span class="na">expect</span><span class="p">(</span><span class="n">dep1</span><span class="p">.</span><span class="na">metodo1</span><span class="p">(</span><span class="n">anyString</span><span class="p">(),</span><span class="n">anyInt</span><span class="p">())).</span><span class="na">andStubReturn</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+
+<span class="c1">//metodo2() devolverá una excepción cuando se invoque desde SUT</span>
+<span class="n">EasyMock</span><span class="p">.</span><span class="na">expect</span><span class="p">(</span><span class="n">dep1</span><span class="p">.</span><span class="na">metodo2</span><span class="p">(</span><span class="n">anyObject</span><span class="p">())).</span><span class="na">andStubThrow</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyException</span><span class="p">(</span><span class="s">&quot;message&quot;</span><span class="p">));</span>
+
+<span class="n">dep1</span><span class="p">.</span><span class="na">metodo3</span><span class="p">(</span><span class="n">anyInt</span><span class="p">());</span><span class="w"> </span><span class="c1">//metodo3 es un método que devuelve void</span>
+<span class="n">EasyMock</span><span class="p">.</span><span class="na">expectLastCall</span><span class="p">.</span><span class="na">asStub</span><span class="p">();</span>
+</code></pre></div>
+<p>Si <code>EasyMock.expectLastCall.asStub();</code> aparece <strong>inmediatamente después</strong> de un método, se considera stub. Se utiliza en métodos <strong>void</strong> que <strong>no tienen valor de retorno</strong>, en los que no se puede poner <code>.andStubReturn(...)</code>.</p>
+<ol>
+<li>Llamamos a <code>EasyMock.replay(...)</code> para <strong>activar</strong> el doble.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">EasyMock</span><span class="p">.</span><span class="na">replay</span><span class="p">(</span><span class="n">dep1</span><span class="p">);</span>
+</code></pre></div>
+<p>Si <strong>no cambiamos el estado del doble a "replay"</strong> las expectativas <strong>NO</strong> se tendrán en cuenta, por lo que <strong>si se invoca al doble</strong> desde nuestro SUT <strong>se devolverán los valores por defecto</strong>.</p>
+<hr />
+<h3 id="ejemplo-de-programacion-de-expectativas">Ejemplo de programación de expectativas<a class="headerlink" href="#ejemplo-de-programacion-de-expectativas" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">//creamos el doble</span>
+<span class="n">Dependencia</span><span class="w"> </span><span class="n">dep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EasyMock</span><span class="p">.</span><span class="na">niceMock</span><span class="p">(</span><span class="n">Dependencia</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="c1">//programamos las expectativas</span>
+<span class="c1">//CADA vez que nuestro SUT invoque a servicio4 con un 12, devolverá 25</span>
+<span class="c1">//independientemente del número de invocaciones</span>
+<span class="n">EasyMock</span><span class="p">.</span><span class="na">expect</span><span class="p">(</span><span class="n">dep</span><span class="p">.</span><span class="na">servicio4</span><span class="p">(</span><span class="mi">12</span><span class="p">)).</span><span class="na">andStubReturn</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span>
+
+<span class="c1">//si nuestro SUT invoca a servicio4 con cualquier otro valor, devolverá 30</span>
+<span class="c1">//independientemente del número de veces que se invoque</span>
+<span class="n">EasyMock</span><span class="p">.</span><span class="na">expect</span><span class="p">(</span><span class="n">dep</span><span class="p">.</span><span class="na">servicio4</span><span class="p">(</span><span class="n">EasyMock</span><span class="p">.</span><span class="na">not</span><span class="p">(</span><span class="n">EasyMock</span><span class="p">.</span><span class="na">eq</span><span class="p">(</span><span class="mi">12</span><span class="p">)))).</span><span class="na">andStubReturn</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+
+<span class="c1">//si nuestro SUT invoca servicio5(8) siempre -&gt; el stub devolverá null todas las veces</span>
+<span class="c1">//null es el valor por defecto para los Strings</span>
+<span class="c1">//si nuestra SUT no invoca nunca servicio5(3), el test NO fallará</span>
+<span class="n">EasyMock</span><span class="p">.</span><span class="na">expect</span><span class="p">(</span><span class="n">dep</span><span class="p">.</span><span class="na">servicio5</span><span class="p">(</span><span class="mi">3</span><span class="p">)).</span><span class="na">andStubReturn</span><span class="p">(</span><span class="s">&quot;pepe&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Los métodos <code>not()</code> y <code>eq()</code> admiten como parámetro tanto tipos primitivos como objetos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//otros métodos que pueden usarse</span>
+<span class="n">and</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="n">second</span><span class="p">),</span><span class="w"> </span><span class="n">or</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="n">second</span><span class="p">)</span><span class="c1">//X puede ser de tipo primitivo o un objeto</span>
+<span class="n">lt</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="n">leq</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="n">geq</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="n">gt</span><span class="p">(</span><span class="n">X</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="c1">//Para X = tipo primitivo</span>
+<span class="n">startsWith</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">prefix</span><span class="p">),</span><span class="w"> </span><span class="n">contains</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">substring</span><span class="p">),</span><span class="w"> </span><span class="n">endsWith</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">suffix</span><span class="p">)</span>
+<span class="n">isNull</span><span class="p">(),</span><span class="w"> </span><span class="n">notNull</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h3 id="ejemplos-driver-con-stubs-y-easymock">Ejemplos: Driver con STUBS y EasyMock<a class="headerlink" href="#ejemplos-driver-con-stubs-y-easymock" title="Permanent link">&para;</a></h3>
+<p><img alt="item" src="../../img/ppss/ejemplo%201%20easymock.png" /></p>
+<p><img alt="item" src="../../img/ppss/ejemplo%202%20easymock.png" /></p>
+<hr />
+<h2 id="objetos-stub-vs-objetos-mock">Objetos STUB vs Objetos MOCK<a class="headerlink" href="#objetos-stub-vs-objetos-mock" title="Permanent link">&para;</a></h2>
+<h3 id="stub">STUB<a class="headerlink" href="#stub" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Se <strong>centra</strong> en <strong>entradas indirectas</strong> que la SUT utiliza</li>
+<li><strong>No</strong> puede hacer <strong>que el test falle</strong>, simplemente devuelve datos.</li>
+</ul>
+<h3 id="mock">MOCK<a class="headerlink" href="#mock" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Comprueba interacciones</strong> (cantidad de llamadas, orden, parámetros).</li>
+<li>Puede <strong>forzar un fallo</strong> en caso de que <strong>no se cumplan las expectativas</strong>.</li>
+</ul>
+<p><img alt="item" src="../../img/ppss/stub%20vs%20mock.png" /></p>
+<hr />
+<h2 id="easymock-y-tipos-de-dobles">EasyMock y tipos de dobles<a class="headerlink" href="#easymock-y-tipos-de-dobles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>niceMock(...)</code>: <strong>no falla con métodos sin programar</strong>. Útil como stub.</li>
+<li><code>mock(...)</code>: <strong>no chequea orden</strong>, pero <strong>falla si hay llamadas no programadas</strong>.</li>
+<li><code>strictMock(...)</code>: <strong>chequea el orden de las invocaciones y falla si difiere de lo esperado</strong>.</li>
+</ul>
+<p><img alt="item" src="../../img/ppss/easymock%20y%20tipos%20de%20dobles.png" /></p>
+<hr />
+<h2 id="easymock-implementacion-de-mocks">EasyMock: Implementación de MOCKS<a class="headerlink" href="#easymock-implementacion-de-mocks" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Crear <strong>mock</strong> (<code>mock(...)</code> o <code>strictMock(...)</code>) a partir de una clase o interfaz.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">org.easymock.EasyMock</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="c1">//si sólo invocamos a 1 método de dep1 desde nuestra SUT</span>
+<span class="n">Dependencia1</span><span class="w"> </span><span class="n">dep1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EasyMock</span><span class="p">.</span><span class="na">mock</span><span class="p">(</span><span class="n">Dependencia1</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+
+<span class="c1">//en cualquier otro caso</span>
+<span class="n">Dependencia2</span><span class="w"> </span><span class="n">dep2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EasyMock</span><span class="p">.</span><span class="na">strictMock</span><span class="p">(</span><span class="n">Dependencia2</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</code></pre></div>
+<p>Para <code>dep2</code> si que importa el orden de invocaciones porque utiliza <code>strictMock(...)</code>.</p>
+<ol>
+<li><strong>Programar expectativas detalladas</strong> (métodos, parámetros, valores devueltos, número de invocaciones, etc.).</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1">//metodo1() será invocado sólo una vez desde nuestro SUT con los</span>
+<span class="c1">//parámetros indicados y devolverá 9</span>
+<span class="n">EasyMock</span><span class="p">.</span><span class="na">expect</span><span class="p">(</span><span class="n">dep2</span><span class="p">.</span><span class="na">metodo1</span><span class="p">(</span><span class="s">&quot;xxx&quot;</span><span class="p">,</span><span class="mi">7</span><span class="p">)).</span><span class="na">andReturn</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
+<span class="c1">//metodo1() será invocado 1 vez desde SUT y devolverá una excepción</span>
+
+<span class="n">EasyMock</span><span class="p">.</span><span class="na">expect</span><span class="p">(</span><span class="n">dep2</span><span class="p">.</span><span class="na">metodo1</span><span class="p">(</span><span class="s">&quot;yy&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">)).</span><span class="na">andThrow</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyException</span><span class="p">(</span><span class="s">&quot;message&quot;</span><span class="p">));</span>
+<span class="c1">//metodo2() será invocado 1 vez desde nuestra SUT.</span>
+<span class="c1">//metodo2() es un método que devuelve void</span>
+<span class="n">dep1</span><span class="p">.</span><span class="na">metodo2</span><span class="p">(</span><span class="mi">15</span><span class="p">);</span>
+</code></pre></div>
+<ol>
+<li><strong>SIEMPRE</strong> se ACTIVA el mock usando el método <code>replay()</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">EasyMock</span><span class="p">.</span><span class="na">replay</span><span class="p">(</span><span class="n">dep1</span><span class="p">,</span><span class="n">dep2</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Si no activamos el mock las expectativas no tienen efecto.</p>
+</blockquote>
+<ol>
+<li><strong>SIEMPRE</strong> Verificar que la SUT invoca a los mocks. <strong>Confirma que las interacciones reales coinciden con las programadas</strong>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">EasyMock</span><span class="p">.</span><span class="na">verify</span><span class="p">(</span><span class="n">dep1</span><span class="p">,</span><span class="n">dep2</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Si no invocamos a alguna expectativa desde la SUT se lanzará la excepción <code>AssertionError</code>.</p>
+</blockquote>
+<hr />
+<h3 id="ejemplo-de-programacion-de-expectativas_1">Ejemplo de programación de expectativas<a class="headerlink" href="#ejemplo-de-programacion-de-expectativas_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cuando <strong>ejecutamos la SUT</strong> durante las pruebas, el mock <strong>registrará TODAS las interacciones desde el SUT</strong>.</li>
+</ul>
+<p>Para especificar las expectativas podemos indicar:</p>
+<h4 id="numero-de-invocaciones">Número de invocaciones<a class="headerlink" href="#numero-de-invocaciones" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">expect</span><span class="p">(</span><span class="n">mock</span><span class="p">.</span><span class="na">metodoX</span><span class="p">(</span><span class="s">&quot;parametro&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">//invocamos al métodoX(), con el parámetro especificado</span>
+<span class="w">    </span><span class="p">.</span><span class="na">andReturn</span><span class="p">(</span><span class="mi">42</span><span class="p">).</span><span class="na">times</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">//devuelve 42 las tres primeras veces</span>
+<span class="w">    </span><span class="p">.</span><span class="na">andThrow</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">//las siguientes 4 llamadas devuelven una excepción</span>
+<span class="w">    </span><span class="p">.</span><span class="na">andReturn</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">);</span><span class="w"> </span><span class="c1">//la siguiente llamada devuelve -42 (una única vez)</span>
+</code></pre></div>
+<p>Las expectativas se pueden <strong>encadenar</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">expect</span><span class="p">(</span><span class="n">mock</span><span class="p">.</span><span class="na">operation</span><span class="p">()).</span><span class="na">andReturn</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="na">times</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="p">.</span><span class="na">andThrow</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;message&quot;</span><span class="p">));</span>
+
+<span class="c1">// en lugar de</span>
+
+<span class="n">expect</span><span class="p">(</span><span class="n">mock</span><span class="p">.</span><span class="na">operation</span><span class="p">().</span><span class="na">andReturn</span><span class="p">(</span><span class="kc">true</span><span class="p">).</span><span class="na">times</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">expectLastCall</span><span class="p">().</span><span class="na">andThrow</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;message&quot;</span><span class="p">));</span>
+</code></pre></div>
+<h4 id="valores-de-parametros">Valores de parámetros<a class="headerlink" href="#valores-de-parametros" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Comparación por <code>equals()</code> o por coincidencia exacta para comparar <strong>objetos</strong>.</li>
+<li>Patrones como <code>anyObject()</code>, <code>same(obj)</code> (exactamente la misma instancia especificada), <code>isNull()</code>, <code>notNull()</code>.</li>
+</ul>
+<h4 id="orden-de-invocacion-de-expectativas">Orden de invocación de expectativas<a class="headerlink" href="#orden-de-invocacion-de-expectativas" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Si creamos dos <code>strictMock</code> independientemente, no se checa el orden <strong>entre</strong> ellos.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Doc1</span><span class="w"> </span><span class="n">mock1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EasyMock</span><span class="p">.</span><span class="na">strictMock</span><span class="p">(</span><span class="n">Doc1</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="n">Doc2</span><span class="w"> </span><span class="n">mock2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EasyMock</span><span class="p">.</span><span class="na">strictMock</span><span class="p">(</span><span class="n">Doc2</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="cm">/* si las expectativas determinan un cierto orden</span>
+<span class="cm">    entre las invocaciones a mock1 y mock2,</span>
+<span class="cm">    si nuestra SUT NO sigue ese orden de invocaciones</span>
+<span class="cm">    el test NO falla */</span>
+<span class="n">replay</span><span class="p">(</span><span class="n">mock1</span><span class="p">,</span><span class="n">mock2</span><span class="p">);</span>
+<span class="c1">//invocamos a nuestro SUT</span>
+<span class="n">verify</span><span class="p">(</span><span class="n">mock1</span><span class="p">,</span><span class="n">mock2</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>Para chequear también el orden entre múltiples mocks, se utiliza <code>IMocksControl</code> con <code>createStrictControl()</code>.<ul>
+<li>A partir de ese <code>ctrl</code>, se invocan <code>ctrl.mock(Clase.class)</code> para crear los mocks.</li>
+<li><code>ctrl.replay()</code> y <code>ctrl.verify()</code> validan las interacciones en conjunto.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">IMocksControl</span><span class="w"> </span><span class="n">ctrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EasyMock</span><span class="p">.</span><span class="na">createStrictControl</span><span class="p">();</span>
+<span class="n">Doc1</span><span class="w"> </span><span class="n">mock1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctrl</span><span class="p">.</span><span class="na">mock</span><span class="p">(</span><span class="n">Doc1</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="n">Doc2</span><span class="w"> </span><span class="n">mock2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ctrl</span><span class="p">.</span><span class="na">mock</span><span class="p">(</span><span class="n">Doc2</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<span class="c1">//si las expectativas determinan un cierto orden</span>
+<span class="c1">//entre las invocaciones a mock1 y mock2,</span>
+<span class="c1">//si nuestro SUT no sigue ese orden de invocaciones</span>
+<span class="c1">//el test fallará</span>
+<span class="n">ctrl</span><span class="p">.</span><span class="na">replay</span><span class="p">();</span><span class="w"> </span><span class="c1">//no es necesario usar parámetros</span>
+<span class="c1">//invocamos a nuestro SUT</span>
+<span class="n">ctrl</span><span class="p">.</span><span class="na">verify</span><span class="p">();</span>
+</code></pre></div>
+<hr />
+<h3 id="ejemplo-de-uso-de-mocks-con-easymock">Ejemplo de uso de mocks con EasyMock<a class="headerlink" href="#ejemplo-de-uso-de-mocks-con-easymock" title="Permanent link">&para;</a></h3>
+<p><img alt="item" src="../../img/ppss/mocks%20con%20easymock.png" /></p>
+<p><img alt="item" src="../../img/ppss/mocks%20con%20easymock%201.png" /></p>
+<hr />
+<h2 id="diferencia-easymockstubs-y-easymockmocks">Diferencia EasyMock:STUBS y EasyMock:MOCKS<a class="headerlink" href="#diferencia-easymockstubs-y-easymockmocks" title="Permanent link">&para;</a></h2>
+<p>El <strong>proceso de implementación</strong> es el mismo para ambos. Tanto con stubs como con mocks sigues estos pasos básicos:</p>
+<ol>
+<li><strong>Identificar</strong> las dependencias externas.</li>
+<li>Asegurarte de que la SUT es testable.</li>
+<li><strong>Implementar</strong> el doble (ya sea stub o mock).</li>
+<li><strong>Implementar</strong> el driver de prueba.</li>
+</ol>
+<p>La diferencia radica en la configuración del doble:</p>
+<ul>
+<li>Con <strong>stubs</strong> usas métodos como <code>andStubReturn(...)</code> para definir respuestas fijas, enfocándote en la verificación del estado de la SUT.</li>
+<li>Con <strong>mocks</strong> defines expectativas precisas sobre las interacciones (llamadas, orden, parámetros) utilizando métodos como <code>expect(...)</code>, <code>andReturn(...)</code>, <code>andThrow(...)</code>, etc.</li>
+</ul>
+<blockquote>
+<p>Las <strong>STUBS</strong> se configuran para <strong>devolver datos predefinidos</strong> sin comprobar las interacciones (número, orden o parámetros de las llamadas). <strong>Verificación basada en el estado</strong>.<br />
+Los <strong>MOCKS</strong> definen y modifican esas interacciones que los stubs no tienen en cuenta. <strong>Verificación basada en el comportamiento</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="partial-mocking">Partial Mocking<a class="headerlink" href="#partial-mocking" title="Permanent link">&para;</a></h2>
+<p>A veces podemos necesitar proporcionar una implementación ficticia de <strong>sólo de algunos métodos concretos</strong> de la clase, no toda entera (partial mocking). <br />
+Esto ocurre cuando se hacen <strong>llamadas entre métodos de su misma clase</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">ToMock</span><span class="w"> </span><span class="n">mock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partialMockBuilder</span><span class="p">(</span><span class="n">ToMock</span><span class="p">.</span><span class="na">class</span><span class="p">).</span><span class="na">addMockedMethod</span><span class="p">(</span><span class="s">&quot;mockedMethod&quot;</span><span class="p">).</span><span class="na">mock</span><span class="p">();</span><span class="w"> </span>
+<span class="c1">// podría ser también .strictMock() o .mock() dependiendo de lo queramos hacer</span>
+
+<span class="c1">// Ejemplo</span>
+<span class="n">EasyMock</span><span class="p">.</span><span class="na">partialMockBuilder</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">.</span><span class="na">class</span><span class="p">).</span><span class="na">addMockedMethod</span><span class="p">(</span><span class="s">&quot;convertX&quot;</span><span class="p">,</span><span class="s">&quot;convertY&quot;</span><span class="p">).</span><span class="na">strictMock</span><span class="p">();</span>
+</code></pre></div>
+<ul>
+<li>El método añadido con <code>addMockecdMethod()</code> será "mocked" (sustituido por su doble), el resto se ejecutan con el código original. </li>
+</ul>
+<p><img alt="item" src="../../img/ppss/partial%20mocking.png" /></p>
+<ul>
+<li><strong>Constructor con parámetros</strong>: se ilustra <code>withConstructor(...)</code> para crear un objeto con un constructor personalizado.</li>
+</ul>
+<p><img alt="item" src="../../img/ppss/constructor%20con%20par%C3%A1metros.png" /></p>
+<p><img alt="item" src="../../img/ppss/driver%20S06.png" /></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Iván Guijarro — CC BY-NC-SA 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
