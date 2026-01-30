@@ -2,10 +2,6 @@
 
 Apuntes en Markdown publicados con MkDocs.
 
-## Requisitos
-
-- Python 3
-
 ## Instalación
 
 ```bash
@@ -37,4 +33,3 @@ Esto compila y publica **solo** el contenido generado (lo de `site/`) en la rama
 Notas:
 
 - Por defecto usa la rama `gh-pages` y publica en la raíz del branch.
-- Si GitHub Pages no apunta a esa rama, revisa Settings → Pages y selecciona `gh-pages`.

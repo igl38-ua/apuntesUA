@@ -43,7 +43,7 @@ extra_javascript:
 #       link: https://github.com/igl38-ua/apuntesUA
 extra:
   analytics:
-    announce: "¡Bienvenidos a la nueva documentación!"
+    announce: "¡Bienvenidos a Apuntes UA!"
 
 copyright: © 2025 Iván Guijarro — CC BY-NC-SA 4.0
 
@@ -149,3 +149,5 @@ nav:
     - Parciales:
       - Parcial 1: PPSS/Parcial 1.md
       - Parcial 2: PPSS/Parcial 2.md
+
+  
