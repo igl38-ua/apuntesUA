@@ -58,3 +58,4 @@ def on_page_markdown(markdown, page, config, files):
     if markdown.endswith('\n'):
         result += '\n'
     return result
+
